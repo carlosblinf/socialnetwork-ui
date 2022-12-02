@@ -1,0 +1,134 @@
+@mixin button {
+  width: 50%;
+  border: none;
+  padding: 15px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.login {
+  height: 100vh;
+  background-color: #b0b5f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .card {
+    width: 50%;
+    display: flex;
+    background: #fff;
+    border-radius: 10px;
+    min-height: 600px;
+    overflow: hidden;
+
+    .left {
+      flex: 1;
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      //   background: url('https://images.pexels.com/photos/3184435/pexels-photo-3184435.jpeg');
+      background: radial-gradient(
+          rgba(61, 72, 220, 0.5),
+          rgba(61, 72, 220, 0.5)
+        ),
+        url('pexels-fauxels-3184435.jpg');
+      background-size: cover;
+      gap: 30px;
+      color: white;
+
+      h1 {
+        font-size: 6.25rem;
+        line-height: 100px;
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+
+      span {
+        font-size: 0.9rem;
+      }
+
+      button {
+        background-color: white;
+        color: rebeccapurple;
+        @include button();
+      }
+    }
+
+    .right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 50px;
+      gap: 50px;
+
+      h1 {
+        color: #555;
+        font-size: 3em;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        input {
+          border: none;
+          border-bottom: 1px solid lightgray;
+          padding: 20px 10px;
+          font-size: 1.2rem;
+        }
+        button {
+          background-color: #090476;
+          background-color: rebeccapurple;
+          color: white;
+          @include button();
+        }
+      }
+      span {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 1400px) {
+    .card {
+      width: 80%;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .card {
+      .left {
+        display: none;
+      }
+      .right {
+        span {
+          display: block;
+
+          a {
+            text-decoration: none;
+            color: rebeccapurple;
+            font-size: 1.2rem;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 400px) {
+    .card {
+      .right {
+        form {
+          width: 80%;
+        }
+        span {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

@@ -100,6 +100,17 @@
     }
   }
 
+  @media (max-width: 1200px) {
+    .card {
+      .left {
+        h1 {
+          font-size: 4.25rem;
+          line-height: 4.25rem;
+        }
+      }
+    }
+  }
+
   @media (max-width: 900px) {
     .card {
       .left {

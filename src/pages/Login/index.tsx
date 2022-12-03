@@ -6,7 +6,7 @@ function Login() {
     <div className={styles.login}>
       <div className={styles.card}>
         <div className={styles.left}>
-          <h1>Hello World.</h1>
+          <h1>Social Network.</h1>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea laborum
             harum accusantium nobis eos a error, blanditiis iusto, temporibus
@@ -14,13 +14,15 @@ function Login() {
             alias.
           </p>
           <span>Don't yo have an account?</span>
-          <button type="button">Register</button>
+          <Link to="/register">
+            <button type="button">Register</button>
+          </Link>
         </div>
         <div className={styles.right}>
           <h1>Login</h1>
           <form>
-            <input type="text" name="username" placeholder="username" />
-            <input type="password" name="password" placeholder="password" />
+            <input type="text" name="username" placeholder="Username" />
+            <input type="password" name="password" placeholder="Password" />
             <button type="submit">Login</button>
           </form>
           <span>

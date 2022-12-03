@@ -2,17 +2,25 @@ import React from 'react';
 import { Navigate } from 'react-router-dom';
 
 type PrivateRoutesProps = {
-  children: React.ReactElement;
+  component: React.ReactElement;
+  roles: Array<any>;
 };
 
-function PrivateRoutes({ children }: PrivateRoutesProps) {
-  const currentUser = true;
+function PrivateRoutes({ component, roles }: PrivateRoutesProps) {
+  const currentUser = {
+    id: 1,
+    role: 'user',
+  };
+  const userHasRequiredRole = roles.includes(currentUser.role);
 
-  if (!currentUser) {
+  if (!currentUser?.id) {
     return <Navigate to="/login" />;
   }
+  if (!userHasRequiredRole) {
+    return <Navigate to="/accessdenied" />;
+  }
 
-  return children;
+  return component;
 }
 
 export default PrivateRoutes;

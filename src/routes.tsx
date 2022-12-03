@@ -1,5 +1,7 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import HomeLayout from './layout/HomeLayout';
+import AccessDenied from './pages/AccessDenied';
+import Error404 from './pages/Error404';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
@@ -16,11 +18,17 @@ const routes = createBrowserRouter([
     element: <Register />,
   },
   {
+    path: '/error-404',
+    element: <Error404 />,
+  },
+  {
+    path: '/accessdenied',
+    element: <AccessDenied />,
+  },
+  {
     path: '/',
     element: (
-      <PrivateRoutes>
-        <HomeLayout />
-      </PrivateRoutes>
+      <PrivateRoutes component={<HomeLayout />} roles={['user', 'admin']} />
     ),
     children: [
       {
@@ -32,6 +40,10 @@ const routes = createBrowserRouter([
         element: <Profile />,
       },
     ],
+  },
+  {
+    path: '*',
+    element: <Navigate to="/error-404" />,
   },
 ]);
 

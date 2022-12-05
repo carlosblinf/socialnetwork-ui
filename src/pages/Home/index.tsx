@@ -1,7 +1,11 @@
 import styles from './home.module.scss';
 
 function Home() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <div>Home</div>
+    </div>
+  );
 }
 
 export default Home;

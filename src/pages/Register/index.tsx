@@ -5,7 +5,7 @@ function Register() {
   return (
     <div className={styles.register}>
       <div className={styles.card}>
-        <div className={styles.left}>
+        <div className={`${styles.left} ${styles.flex}`}>
           <h1>Social Network.</h1>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea laborum
@@ -18,7 +18,7 @@ function Register() {
             <button type="button">Login</button>
           </Link>
         </div>
-        <div className={styles.right}>
+        <div className={`${styles.right} ${styles.flex}`}>
           <h1>Register</h1>
           <form>
             <input type="text" name="name" placeholder="Name" />

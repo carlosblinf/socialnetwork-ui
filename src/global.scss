@@ -1,4 +1,22 @@
-* {
+:root {
+  box-sizing: border-box;
+}
+*,
+::after,
+::before {
+  box-sizing: inherit;
   margin: 0;
   padding: 0;
+}
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
 }

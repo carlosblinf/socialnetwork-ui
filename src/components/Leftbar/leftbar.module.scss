@@ -7,6 +7,9 @@
   min-width: 250px;
   background-color: #f5f6fa;
   overflow: auto;
+  // firefox
+  scrollbar-width: thin;
+
   &::-webkit-scrollbar {
     display: none;
   }

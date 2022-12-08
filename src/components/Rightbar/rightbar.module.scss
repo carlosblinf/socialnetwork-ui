@@ -7,7 +7,10 @@
   min-width: 250px;
   padding-top: 5px;
   background-color: #f5f6fa;
-  overflow: auto;
+  overflow-y: auto;
+  // firefox
+  scrollbar-width: thin;
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -41,7 +44,7 @@
           background-color: #1877f2;
           color: white;
         }
-        span.onlines{
+        span.onlines {
           width: 30px;
           height: 20px;
           padding: 5px 8px 5px 5px;
@@ -55,4 +58,7 @@
   @include tablet {
     display: none;
   }
+
+  // scrollbar-color: rebeccapurple;
+  //   scrollbar-width: thin;
 }

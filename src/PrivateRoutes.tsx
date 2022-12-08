@@ -11,7 +11,7 @@ function PrivateRoutes({ component, roles }: PrivateRoutesProps) {
     id: 1,
     role: 'user',
   };
-  const userHasRequiredRole = roles.includes(currentUser.role);
+  const userHasRequiredRole = roles.includes(currentUser?.role);
 
   if (!currentUser?.id) {
     return <Navigate to="/login" />;

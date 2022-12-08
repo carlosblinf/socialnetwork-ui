@@ -44,7 +44,7 @@ function Navbar() {
           <CgMenuGridO />
         </div>
         <div className={styles.profile}>
-          <img src="user.png" alt="user" />
+          <img src="user.jpg" alt="user" />
           {/* <span>Carlos Ernesto</span> */}
         </div>
       </div>

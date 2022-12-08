@@ -10,7 +10,7 @@ function Leftbar() {
     <div className={styles.leftbar}>
       <div className={styles.container}>
         <div className={styles.user}>
-          <img src="user.jpg" alt="info" />
+          <img src="user_m.jpg" alt="info" />
           <div className={styles.info}>
             <div>Carlos Ernesto</div>
             <span>@carlosblinf</span>

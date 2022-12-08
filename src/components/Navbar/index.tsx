@@ -17,7 +17,7 @@ function Navbar() {
             <div className={styles.iconLogo}>
               {/* <AiOutlineHome /> */}
               {/* <BiNetworkChart /> */}
-              <TbSocial/>
+              <TbSocial />
             </div>
             <span>SocialNetwork</span>
           </Link>
@@ -27,7 +27,11 @@ function Navbar() {
       <div className={styles.right}>
         <div className={styles.search}>
           <BsSearch />
-          <input type="text" name="search" placeholder="Find friends, communities or pages here" />
+          <input
+            type="text"
+            name="search"
+            placeholder="Find friends, communities or pages here"
+          />
         </div>
         <div className={styles.action}>
           <HiOutlineMoon />
@@ -44,7 +48,7 @@ function Navbar() {
           <CgMenuGridO />
         </div>
         <div className={styles.profile}>
-          <img src="user.jpg" alt="user" />
+          <img src="user_m.jpg" alt="user" />
           {/* <span>Carlos Ernesto</span> */}
         </div>
       </div>

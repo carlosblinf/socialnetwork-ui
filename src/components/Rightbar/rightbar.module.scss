@@ -19,9 +19,9 @@
     gap: 15px;
 
     .section {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
       .title {
         display: flex;
         justify-content: space-between;
@@ -29,62 +29,16 @@
         text-transform: uppercase;
         color: #9ba2ae;
 
-        span:last-child {
+        span:nth-child(2) {
           width: 16px;
           height: 16px;
           margin-right: 5px;
           border-radius: 50%;
           padding: 1px;
-          font-size: .7rem;
+          font-size: 0.7rem;
           text-align: center;
           background-color: #1877f2;
           color: white;
-        }
-      }
-
-      .card {
-        display: flex;
-        flex-direction: column;
-        padding: 10px 20px;
-        border-radius: 10px;
-        gap: 8px;
-        background-color: white;
-
-        .info {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          img {
-            width: 40px;
-            height: 40px;
-            border-radius: 5px;
-          }
-          span {
-            color: #1d3a5f;
-          }
-        }
-
-        .buttons {
-          display: flex;
-          justify-content: space-between;
-
-          button {
-            width: 45%;
-            border: none;
-            padding: 8px 20px;
-            border-radius: 10px;
-            font-weight: bold;
-
-            &:first-child {
-              background-color: #1877f2;
-              color: white;
-            }
-            &:last-child {
-              border: 0.2px solid #7f8d92;
-              background-color: white;
-              color: #1d3a5f;
-            }
-          }
         }
       }
     }

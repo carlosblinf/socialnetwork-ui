@@ -1,3 +1,5 @@
+import Friends from '../Friends';
+import UserRequest from '../UserRequests';
 import styles from './rightbar.module.scss';
 
 function Rightbar() {
@@ -9,30 +11,7 @@ function Rightbar() {
             <span>Requests</span>
             <span>2</span>
           </div>
-          <div className={styles.card}>
-            <div className={styles.info}>
-              <img src="https://randomuser.me/api/portraits/men/78.jpg" alt="user" />
-              <span>
-                <b>Tyrell Barrows</b> wants to add you to friends
-              </span>
-            </div>
-            <div className={styles.buttons}>
-              <button type="button">Accept</button>
-              <button type="button">Decline</button>
-            </div>
-          </div>
-          <div className={styles.card}>
-            <div className={styles.info}>
-              <img src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
-              <span>
-                <b>Ana Valerion</b> wants to add you to friends
-              </span>
-            </div>
-            <div className={styles.buttons}>
-              <button type="button">Accept</button>
-              <button type="button">Decline</button>
-            </div>
-          </div>
+          <UserRequest />
         </div>
       </div>
     </div>

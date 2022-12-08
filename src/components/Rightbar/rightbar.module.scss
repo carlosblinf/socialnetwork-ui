@@ -21,6 +21,7 @@
     .section {
       display: flex;
       flex-direction: column;
+      padding-bottom: 1rem;
       gap: 10px;
       .title {
         display: flex;
@@ -39,6 +40,13 @@
           text-align: center;
           background-color: #1877f2;
           color: white;
+        }
+        span.onlines{
+          width: 30px;
+          height: 20px;
+          padding: 5px 8px 5px 5px;
+          border-radius: 5px;
+          background-color: grey;
         }
       }
     }

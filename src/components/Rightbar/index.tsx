@@ -1,4 +1,4 @@
-import Friends from '../Friends';
+import Friends, { onlines } from '../Friends';
 import UserRequest from '../UserRequests';
 import styles from './rightbar.module.scss';
 
@@ -12,6 +12,13 @@ function Rightbar() {
             <span>2</span>
           </div>
           <UserRequest />
+        </div>
+        <div className={styles.section}>
+          <div className={styles.title}>
+            <span>Friends ( Online )</span>
+            <span className={styles.onlines}>{onlines.length}</span>
+          </div>
+          <Friends />
         </div>
       </div>
     </div>

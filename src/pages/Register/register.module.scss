@@ -33,13 +33,12 @@
       padding: 50px;
       justify-content: center;
       gap: 30px;
-      //   background: url('https://images.pexels.com/photos/3184435/pexels-photo-3184435.jpeg');
+      //   background: url('https://images.pexels.com/photos/5081927/pexels-photo-5081927.jpeg');
       background: radial-gradient(
           rgba(61, 72, 220, 0.5),
           rgba(61, 72, 220, 0.5)
         ),
-        url('pexels-fauxels-3184435.jpg');
-      background-size: cover;
+        url('/pexels-register.jpg') center / cover;
       color: white;
 
       h1 {
@@ -66,8 +65,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 50px;
-      gap: 50px;
+      padding: 30px;
+      gap: 20px;
 
       h1 {
         color: #555;
@@ -77,13 +76,20 @@
       form {
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 20px;
 
         input {
           border: none;
           border-bottom: 1px solid lightgray;
-          padding: 20px 10px;
+          padding: 10px;
           font-size: 1.2rem;
+        }
+        .gender {
+          width: 50%;
+          padding: 10px;
+          border: none;
+          border-bottom: 1px solid lightgray;
+          font-size: 1rem;
         }
         button {
           background-color: #090476;

@@ -6,7 +6,7 @@ function Login() {
     <div className={styles.login}>
       <div className={styles.card}>
         <div className={`${styles.left} ${styles.flex}`}>
-          <h1>Social Network.</h1>
+          <h1>Hello World.</h1>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea laborum
             harum accusantium nobis eos a error, blanditiis iusto, temporibus

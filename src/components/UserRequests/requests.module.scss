@@ -1,3 +1,4 @@
+@import '../../styles/mixin.scss';
 .card {
   display: flex;
   flex-direction: column;
@@ -10,11 +11,8 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    img {
-      width: 40px;
-      height: 40px;
-      border-radius: 5px;
-    }
+    @include userImg;
+
     span {
       color: #1d3a5f;
     }

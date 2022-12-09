@@ -15,5 +15,14 @@
   align-items: center;
   padding: 10px;
   gap: 10px;
+  color: #1d3a5f;
   cursor: pointer;
+}
+
+@mixin userImg {
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+  }
 }

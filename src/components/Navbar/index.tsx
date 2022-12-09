@@ -1,8 +1,7 @@
 import { BsSun, BsSearch } from 'react-icons/bs';
-import { BiNetworkChart } from 'react-icons/bi';
 import { TbSocial } from 'react-icons/tb';
 import { HiOutlineMoon } from 'react-icons/hi';
-import { AiOutlineMessage, AiOutlineHome } from 'react-icons/ai';
+import { AiOutlineMessage } from 'react-icons/ai';
 import { CgMenuGridO } from 'react-icons/cg';
 import { IoIosNotificationsOutline } from 'react-icons/io';
 import { Link } from 'react-router-dom';
@@ -15,14 +14,11 @@ function Navbar() {
         <div className={styles.logo}>
           <Link to="/">
             <div className={styles.iconLogo}>
-              {/* <AiOutlineHome /> */}
-              {/* <BiNetworkChart /> */}
               <TbSocial />
             </div>
-            <span>SocialNetwork</span>
+            <h1>SocialNetwork</h1>
           </Link>
         </div>
-        <h1>Home Page</h1>
       </div>
       <div className={styles.right}>
         <div className={styles.search}>
@@ -49,7 +45,6 @@ function Navbar() {
         </div>
         <div className={styles.profile}>
           <img src="user_m.jpg" alt="user" />
-          {/* <span>Carlos Ernesto</span> */}
         </div>
       </div>
     </div>

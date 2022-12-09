@@ -27,16 +27,16 @@
       padding: 10px;
       border-radius: 10px;
       gap: 10px;
-      // background-color: #f5f6fa;
+      color: #1d3a5f;
 
-      img {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-      }
+      @include userImg;
+
       .info {
-        font-size: 1.2rem;
+        font-size: 1rem;
         line-height: 15px;
+        div {
+          font-weight: bold;
+        }
         span {
           font-size: 0.9rem;
         }
@@ -46,10 +46,10 @@
     .menu {
       border-radius: 10px;
       background-color: white;
-      color: #9ba2ae;
 
       .item {
         @include item;
+        color: #9ba2ae;
 
         svg {
           font-size: 2rem;
@@ -82,7 +82,7 @@
         img {
           width: 28px;
           height: 28px;
-          border-radius: 10px;
+          border-radius: 15px;
         }
 
         div {

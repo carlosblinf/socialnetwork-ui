@@ -22,10 +22,18 @@ export function useTheme() {
   return useContext(ThemeContext);
 }
 
+// Detecting the default theme
+const isBrowserDefaultDark = () =>
+  window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+const getDefaultTheme = (): string => {
+  const localStorageTheme = localStorage.getItem('theme');
+  const browserDefault = isBrowserDefaultDark() ? 'dark' : 'light';
+  return localStorageTheme || browserDefault;
+};
+
 export function ThemeContextProvider({ children }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<string>(
-    localStorage.getItem('theme') || 'light'
-  );
+  const [theme, setTheme] = useState<string>(getDefaultTheme());
 
   const toggle = () =>
     setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));

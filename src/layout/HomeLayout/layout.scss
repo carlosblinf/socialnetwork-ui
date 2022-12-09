@@ -1,0 +1,23 @@
+@import '../../styles/mixin.scss';
+.containerLayout {
+  @include themify($themes) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    padding: 0 0.7rem;
+    background-color: themed('bgSecondary');
+
+    .main {
+      flex: 1;
+      display: flex;
+      // background-color: #f5f6fa;
+      // border: 0.5px solid #e1e3e7;
+
+      .content {
+        flex: 8;
+        background-color: themed('bgPrimary');
+      }
+    }
+  }
+}

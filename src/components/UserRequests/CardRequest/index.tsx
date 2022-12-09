@@ -9,10 +9,9 @@ type UserRequest = {
 type CardRequestProps = {
   requestId: number;
   user: UserRequest;
-  styles: CSSModuleClasses;
 };
 
-function CardRequest({ requestId, user, styles }: CardRequestProps) {
+function CardRequest({ requestId, user }: CardRequestProps) {
   function acceptRequest() {
     console.log(requestId);
   }
@@ -22,14 +21,14 @@ function CardRequest({ requestId, user, styles }: CardRequestProps) {
   }
   return (
     <>
-      <div className={styles.info}>
+      <div className="info">
         <img src={user.imageUrl} alt="user request" />
         <span>
           <b>{`${user.firstName} ${user.lastName}`}</b> wants to add you to
           friends
         </span>
       </div>
-      <div className={styles.buttons}>
+      <div className="buttons">
         <button type="button" onClick={acceptRequest}>
           Accept
         </button>

@@ -1,0 +1,46 @@
+@import '../../styles/mixin.scss';
+.card {
+  @include themify($themes) {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    border-radius: 10px;
+    gap: 8px;
+    background-color: themed('bgSecondary');
+
+    .info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      @include userImg;
+
+      span {
+        color: themed('textColorPrimary');
+      }
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        width: 45%;
+        border: none;
+        padding: 8px 20px;
+        border-radius: 10px;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:first-child {
+          background-color: #1877f2;
+          color: white;
+        }
+        &:last-child {
+          border: 0.2px solid #7f8d92;
+          background-color: themed('bgButtonColor');
+          color: themed('textColorPrimary');
+        }
+      }
+    }
+  }
+}

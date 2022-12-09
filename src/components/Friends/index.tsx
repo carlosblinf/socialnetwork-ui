@@ -1,5 +1,5 @@
 import CardFriend from './CardFriend';
-import styles from './friends.module.scss';
+import './friends.scss';
 
 export const onlines = [
   {
@@ -31,21 +31,21 @@ export const onlines = [
     countMessage: 0,
   },
   {
-    id: 5,
+    id: 6,
     firstName: 'Oleta',
     lastName: 'Abbott',
     imageUrl: 'https://randomuser.me/api/portraits/women/18.jpg',
     countMessage: 0,
   },
   {
-    id: 5,
+    id: 7,
     firstName: 'Ewell',
     lastName: 'Mueller',
     imageUrl: 'https://randomuser.me/api/portraits/men/58.jpg',
     countMessage: 0,
   },
   {
-    id: 5,
+    id: 8,
     firstName: 'Eleanora',
     lastName: 'Price',
     imageUrl: 'https://randomuser.me/api/portraits/women/39.jpg',
@@ -55,10 +55,10 @@ export const onlines = [
 
 function Friends() {
   return (
-    <div className={styles.container}>
+    <div className="container">
       {onlines?.map((user) => (
-        <div key={user.id} className={styles.item}>
-          <CardFriend user={user} styles={styles} />
+        <div key={user.id} className="itemFriend">
+          <CardFriend user={user} />
         </div>
       ))}
       {!onlines && <span>No friends online</span>}

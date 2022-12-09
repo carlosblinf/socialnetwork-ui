@@ -9,12 +9,11 @@ type User = {
 };
 type CardFriendProps = {
   user: User;
-  styles: CSSModuleClasses;
 };
-function CardFriend({ user, styles }: CardFriendProps) {
+function CardFriend({ user }: CardFriendProps) {
   return (
     <>
-      <div className={styles.info}>
+      <div className="info">
         <img src={user.imageUrl} alt="friend" />
         {`${user.firstName} ${user.lastName}`}
       </div>

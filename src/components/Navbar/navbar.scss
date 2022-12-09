@@ -1,0 +1,179 @@
+@import '../../styles/mixin.scss';
+.navbar {
+  @include themify($themes) {
+    position: sticky;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 10px 30px;
+    // border-bottom: 0.5px solid lightgray;
+    gap: 10px;
+    background-color: themed('bgSecondary');
+
+    .left {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 80px;
+
+      .logo {
+        a {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          text-decoration: none;
+          text-transform: uppercase;
+
+          .iconLogo {
+            width: 40px;
+            height: 40px;
+            border-radius: 15px;
+            padding: 3px;
+            text-align: center;
+            background-color: #2f80ed;
+            svg {
+              font-size: 2rem;
+              color: white;
+            }
+          }
+
+          h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: themed('textColorPrimary');
+          }
+        }
+      }
+    }
+
+    .right {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 25px;
+      font-size: 1.5rem;
+
+      .search {
+        display: flex;
+        position: relative;
+        align-items: center;
+        border-radius: 10px;
+        padding: 5px 20px;
+        gap: 5px;
+        background-color: themed('bgPrimary');
+        color: themed('textColorSecondary');
+
+        svg {
+          font-size: 1rem;
+        }
+
+        input {
+          width: 300px;
+          height: 35px;
+          border: none;
+          outline: none;
+          font-size: 1rem;
+          background-color: themed('bgPrimary');
+        }
+        ::placeholder {
+          color: themed('textColorSecondary');
+        }
+      }
+      &:focus-visible,
+      :focus-within {
+        border: 1px solid themed('textColorSecondary');
+      }
+      .action {
+        position: relative;
+        cursor: pointer;
+        color: themed('textColorSecondary');
+
+        span {
+          position: absolute;
+          right: -10px;
+          top: -15px;
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          padding: 1px;
+          font-size: 0.7rem;
+          font-weight: bold;
+          text-align: center;
+          background-color: #f95e5e;
+          color: white;
+        }
+      }
+
+      .profile {
+        @include userImg;
+        cursor: pointer;
+      }
+    }
+
+    @include tablet {
+      padding: 30px 10px 10px 10px;
+      .right {
+        gap: 15px;
+        .search {
+          padding: 5px;
+          input {
+            width: 180px;
+            font-size: 0.6rem;
+          }
+        }
+      }
+    }
+
+    @include medium {
+      .logo {
+        a {
+          h1 {
+            display: none;
+          }
+        }
+      }
+    }
+
+    @include mobile {
+      align-items: flex-start;
+      height: 140px;
+      padding: 30px 20px 5px 20px;
+      gap: 25px;
+
+      .left {
+        flex: none;
+      }
+      .right {
+        justify-content: space-around;
+        gap: 0;
+
+        .search {
+          position: absolute;
+          top: 100px;
+          left: 20px;
+          right: 20px;
+          padding: 5px 10px;
+          gap: 5px;
+
+          input {
+            width: 280px;
+            font-size: 0.9rem;
+          }
+        }
+        .action {
+          span {
+            width: 22px;
+            height: 22px;
+            right: -10px;
+            top: -25px;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

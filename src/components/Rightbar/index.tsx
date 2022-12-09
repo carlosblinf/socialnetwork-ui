@@ -1,22 +1,22 @@
 import Friends, { onlines } from '../Friends';
 import UserRequest from '../UserRequests';
-import styles from './rightbar.module.scss';
+import './rightbar.scss';
 
 function Rightbar() {
   return (
-    <div className={styles.rightbar}>
-      <div className={styles.container}>
-        <div className={styles.section}>
-          <div className={styles.title}>
+    <div className="rightbar">
+      <div className="containerRighbar">
+        <div className="section">
+          <div className="title">
             <span>Requests</span>
             <span>2</span>
           </div>
           <UserRequest />
         </div>
-        <div className={styles.section}>
-          <div className={styles.title}>
+        <div className="section">
+          <div className="title">
             <span>Friends ( Online )</span>
-            <span className={styles.onlines}>{onlines.length}</span>
+            <span className="onlines">{onlines.length}</span>
           </div>
           <Friends />
         </div>

@@ -1,4 +1,4 @@
-import styles from './profile.module.scss';
+import './profile.scss';
 
 function Profile() {
   return <div>Profile</div>;

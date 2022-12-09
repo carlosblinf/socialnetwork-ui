@@ -1,5 +1,5 @@
 import CardRequest from './CardRequest';
-import styles from './requests.module.scss';
+import './requests.scss';
 
 function UserRequest() {
   const requests = [
@@ -27,8 +27,8 @@ function UserRequest() {
   return (
     <>
       {requests?.map((req) => (
-        <div key={req.id} className={styles.card}>
-          <CardRequest requestId={req.id} user={req.user} styles={styles} />
+        <div key={req.id} className="card">
+          <CardRequest requestId={req.id} user={req.user} />
         </div>
       ))}
       {!requests && <span>No request</span>}

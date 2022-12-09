@@ -2,15 +2,15 @@ import { Outlet } from 'react-router-dom';
 import Leftbar from '../../components/Leftbar';
 import Navbar from '../../components/Navbar';
 import Rightbar from '../../components/Rightbar';
-import styles from './layout.module.scss';
+import './layout.scss';
 
 function HomeLayout() {
   return (
-    <div className={styles.container}>
+    <div className="containerLayout">
       <Navbar />
-      <div className={styles.main}>
+      <div className="main">
         <Leftbar />
-        <div className={styles.content}>
+        <div className="content">
           <Outlet />
         </div>
         <Rightbar />

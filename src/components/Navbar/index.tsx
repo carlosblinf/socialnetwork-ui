@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { BsSun, BsSearch } from 'react-icons/bs';
 import { TbSocial } from 'react-icons/tb';
 import { HiOutlineMoon } from 'react-icons/hi';
@@ -5,23 +7,26 @@ import { AiOutlineMessage } from 'react-icons/ai';
 import { CgMenuGridO } from 'react-icons/cg';
 import { IoIosNotificationsOutline } from 'react-icons/io';
 import { Link } from 'react-router-dom';
-import styles from './navbar.module.scss';
+import './navbar.scss';
+import { useTheme } from '../../contex/ThemeModeContext';
 
 function Navbar() {
+  const { theme, toggle } = useTheme();
+
   return (
-    <div className={styles.navbar}>
-      <div className={styles.left}>
-        <div className={styles.logo}>
+    <div className="navbar">
+      <div className="left">
+        <div className="logo">
           <Link to="/">
-            <div className={styles.iconLogo}>
+            <div className="iconLogo">
               <TbSocial />
             </div>
             <h1>SocialNetwork</h1>
           </Link>
         </div>
       </div>
-      <div className={styles.right}>
-        <div className={styles.search}>
+      <div className="right">
+        <div className="search">
           <BsSearch />
           <input
             type="text"
@@ -29,21 +34,21 @@ function Navbar() {
             placeholder="Find friends, communities or pages here"
           />
         </div>
-        <div className={styles.action}>
-          <HiOutlineMoon />
+        <div className="action" onClick={() => toggle()}>
+          {theme === 'dark' ? <BsSun /> : <HiOutlineMoon />}
         </div>
-        <div className={styles.action}>
+        <div className="action">
           <AiOutlineMessage />
           <span>2</span>
         </div>
-        <div className={styles.action}>
+        <div className="action">
           <IoIosNotificationsOutline />
           <span>9+</span>
         </div>
-        <div className={styles.action}>
+        <div className="action">
           <CgMenuGridO />
         </div>
-        <div className={styles.profile}>
+        <div className="profile">
           <img src="user_m.jpg" alt="user" />
         </div>
       </div>

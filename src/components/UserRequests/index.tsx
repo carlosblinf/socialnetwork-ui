@@ -1,5 +1,5 @@
-import CardRequest from './CardRequest';
-import './requests.scss';
+import RequestCard from './RequestCard';
+import './UserRequest.scss';
 
 function UserRequest() {
   const requests = [
@@ -10,7 +10,7 @@ function UserRequest() {
         id: 2,
         firstName: 'Tyrell',
         lastName: 'Barrows',
-        imageUrl: 'https://randomuser.me/api/portraits/men/78.jpg',
+        avatar: 'https://randomuser.me/api/portraits/men/78.jpg',
       },
     },
     {
@@ -20,7 +20,7 @@ function UserRequest() {
         id: 3,
         firstName: 'Ana',
         lastName: 'Valerion',
-        imageUrl: 'https://randomuser.me/api/portraits/women/79.jpg',
+        avatar: 'https://randomuser.me/api/portraits/women/79.jpg',
       },
     },
   ];
@@ -28,7 +28,7 @@ function UserRequest() {
     <>
       {requests?.map((req) => (
         <div key={req.id} className="card">
-          <CardRequest requestId={req.id} user={req.user} />
+          <RequestCard requestId={req.id} user={req.user} />
         </div>
       ))}
       {!requests && <span>No request</span>}

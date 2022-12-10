@@ -1,0 +1,27 @@
+@import '../../styles/mixin.scss';
+
+.home {
+  @include themify($themes) {
+    position: sticky;
+    top: 100px;
+    max-height: calc(100vh - 150px);
+    padding: 20px;
+    overflow: auto;
+    // firefox
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .containerHome {
+      padding: 10px;
+      width: 100%;
+      // background-color: white;
+    }
+
+    @include mobile {
+      padding: 0;
+    }
+  }
+}

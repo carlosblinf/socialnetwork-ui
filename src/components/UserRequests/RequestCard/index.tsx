@@ -4,14 +4,14 @@ type UserRequest = {
   id: number;
   firstName: string;
   lastName: string;
-  imageUrl: string;
+  avatar: string;
 };
-type CardRequestProps = {
+type RequestCardProps = {
   requestId: number;
   user: UserRequest;
 };
 
-function CardRequest({ requestId, user }: CardRequestProps) {
+function RequestCard({ requestId, user }: RequestCardProps) {
   function acceptRequest() {
     console.log(requestId);
   }
@@ -22,7 +22,7 @@ function CardRequest({ requestId, user }: CardRequestProps) {
   return (
     <>
       <div className="info">
-        <img src={user.imageUrl} alt="user request" />
+        <img src={user.avatar} alt="user request" />
         <span>
           <b>{`${user.firstName} ${user.lastName}`}</b> wants to add you to
           friends
@@ -40,4 +40,4 @@ function CardRequest({ requestId, user }: CardRequestProps) {
   );
 }
 
-export default CardRequest;
+export default RequestCard;

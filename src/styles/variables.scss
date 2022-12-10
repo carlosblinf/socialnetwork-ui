@@ -1,0 +1,18 @@
+$themes: (
+  light: (
+    bgPrimary: #f5f6fa,
+    bgSecondary: white,
+    textColorPrimary: #1d3a5f,
+    textColorSecondary: #9ba2ae,
+    textColorSoft: white,
+    bgButtonColor: white,
+  ),
+  dark: (
+    bgPrimary: #333,
+    bgSecondary: #222,
+    textColorPrimary: whitesmoke,
+    textColorSecondary: white,
+    textColorSoft: #333,
+    bgButtonColor: grey,
+  ),
+);

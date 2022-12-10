@@ -1,6 +1,6 @@
 import Friends, { onlines } from '../Friends';
 import UserRequest from '../UserRequests';
-import './rightbar.scss';
+import './Rightbar.scss';
 
 function Rightbar() {
   return (

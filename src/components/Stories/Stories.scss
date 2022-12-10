@@ -1,0 +1,85 @@
+@import '../../styles/mixin.scss';
+
+.stoires {
+  @include themify($themes) {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    overflow-x: scroll;
+    scrollbar-width: thin;
+    position: relative;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    span.next {
+      position: sticky;
+      top: 49%;
+      right: 10px;
+      color: themed('textColorSoft');
+      font-size: 1.5rem
+    }
+
+    .story {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      width: 200px;
+      min-width: 150px;
+      height: 300px;
+      height: 250px;
+      padding: 20px;
+      border-radius: 10px;
+
+      img {
+        align-self: flex-start;
+        width: 60px;
+        height: 60px;
+        padding: 3px;
+        border-radius: 15px;
+        border: 3px solid white;
+      }
+
+      div {
+        display: ruby;
+        max-width: 150px;
+        overflow: hidden;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: capitalize;
+        color: white;
+      }
+
+      .add {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        span:first-child {
+          width: 50px;
+          height: 50px;
+          padding: 4px;
+          border-radius: 15px;
+          border: 3px solid white;
+
+          button {
+            border: none;
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          font-size: 1.5rem;
+          background-color: white;
+          color: blue;
+          }
+        }
+      }
+    }
+
+    @include mobile {
+      gap: 5px;
+    }
+  }
+}

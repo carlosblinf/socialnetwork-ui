@@ -4,17 +4,17 @@ type User = {
   id: number;
   firstName: string;
   lastName: string;
-  imageUrl: string;
+  avatar: string;
   countMessage: number;
 };
-type CardFriendProps = {
+type FriendCardProps = {
   user: User;
 };
-function CardFriend({ user }: CardFriendProps) {
+function FriendCard({ user }: FriendCardProps) {
   return (
     <>
       <div className="info">
-        <img src={user.imageUrl} alt="friend" />
+        <img src={user.avatar} alt="friend" />
         {`${user.firstName} ${user.lastName}`}
       </div>
       {user.countMessage > 0 ? (
@@ -26,4 +26,4 @@ function CardFriend({ user }: CardFriendProps) {
   );
 }
 
-export default CardFriend;
+export default FriendCard;

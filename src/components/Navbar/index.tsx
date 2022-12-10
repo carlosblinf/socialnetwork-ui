@@ -7,7 +7,7 @@ import { AiOutlineMessage } from 'react-icons/ai';
 import { CgMenuGridO } from 'react-icons/cg';
 import { IoIosNotificationsOutline } from 'react-icons/io';
 import { Link } from 'react-router-dom';
-import './navbar.scss';
+import './Navbar.scss';
 import { useTheme } from '../../contex/ThemeModeContext';
 
 function Navbar() {

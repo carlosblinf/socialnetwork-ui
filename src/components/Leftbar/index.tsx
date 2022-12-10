@@ -3,7 +3,7 @@ import { HiOutlinePhoto, HiOutlineUserGroup } from 'react-icons/hi2';
 import { MdOutlineVideoSettings } from 'react-icons/md';
 import { BsPerson } from 'react-icons/bs';
 import { IoSettingsOutline } from 'react-icons/io5';
-import './leftbar.scss';
+import './Leftbar.scss';
 
 function Leftbar() {
   return (

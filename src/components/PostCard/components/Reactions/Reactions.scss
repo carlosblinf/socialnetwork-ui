@@ -1,0 +1,22 @@
+@import '../../../../styles/mixin.scss';
+
+.reactions {
+  @include themify($themes) {
+    display: flex;
+    gap: 35px;
+
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      font-size: 1.2rem;
+      color: themed('textColorPrimary');
+      cursor: pointer;
+
+      @include mobile {
+        font-size: 1rem;
+      }
+    }
+  }
+}

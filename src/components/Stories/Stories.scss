@@ -18,7 +18,7 @@
       top: 49%;
       right: 10px;
       color: themed('textColorSoft');
-      font-size: 1.5rem
+      font-size: 1.5rem;
     }
 
     .story {
@@ -26,10 +26,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      width: 200px;
-      min-width: 150px;
+      min-width: 200px;
       height: 300px;
-      height: 250px;
       padding: 20px;
       border-radius: 10px;
 
@@ -67,12 +65,12 @@
 
           button {
             border: none;
-          width: 100%;
-          height: 100%;
-          border-radius: 10px;
-          font-size: 1.5rem;
-          background-color: white;
-          color: blue;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            background-color: white;
+            color: blue;
           }
         }
       }
@@ -80,6 +78,25 @@
 
     @include mobile {
       gap: 5px;
+
+      .story {
+        min-width: 120px;
+        height: 240px;
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+        .add {
+          gap: 10px;
+          span:first-child {
+            width: 38px;
+            height: 38px;
+            padding: 3px;
+            border-radius: 12px;
+          }
+        }
+      }
     }
   }
 }

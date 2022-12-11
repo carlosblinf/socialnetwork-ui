@@ -6,6 +6,7 @@ $themes: (
     textColorSecondary: #9ba2ae,
     textColorSoft: white,
     bgButtonColor: white,
+    bgHoverBlack: black,
   ),
   dark: (
     bgPrimary: #333,
@@ -14,5 +15,6 @@ $themes: (
     textColorSecondary: white,
     textColorSoft: #333,
     bgButtonColor: grey,
+    bgHoverBlack: white,
   ),
 );

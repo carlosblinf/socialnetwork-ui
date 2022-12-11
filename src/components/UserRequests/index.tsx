@@ -1,4 +1,4 @@
-import RequestCard from './RequestCard';
+import RequestCard from './components/RequestCard';
 import './UserRequest.scss';
 
 function UserRequest() {

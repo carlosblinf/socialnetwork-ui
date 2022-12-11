@@ -1,3 +1,4 @@
+import { fullName, toRelativeTime } from '../../../../utils/infoUtils';
 import { Author } from '../../../../utils/types';
 import './PostHeader.scss';
 
@@ -14,8 +15,8 @@ function PostHeader({ author, date }: PostHeaderProps) {
           <img src={author.avatar} alt={author.firstName} />
         </div>
         <div className="div">
-          <p className="postUser">{author.firstName}</p>
-          <p className="postDate">{date}</p>
+          <p className="postUser">{fullName(author)}</p>
+          <p className="postDate">{toRelativeTime(date)}</p>
         </div>
       </div>
       <div className="actions">...</div>

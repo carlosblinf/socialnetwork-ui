@@ -1,0 +1,83 @@
+@import '../../styles/mixin.scss';
+
+.containerSlider {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-height: 800px;
+  padding: 30px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mySlides {
+    width: 60%;
+    height: 100%;
+    position: relative;
+
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 55%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: white;
+      font-weight: bold;
+      font-size: 2rem;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  }
+  .cursor {
+    cursor: pointer;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    height: 30%;
+    gap: 5px;
+    .column {
+      width: 100px;
+      height: 150px;
+      .demo {
+        opacity: 0.6;
+      }
+
+      .active,
+      .demo:hover {
+        opacity: 1;
+      }
+    }
+  }
+  @include tablet {
+    .mySlides {
+      height: 600px;
+    }
+  }
+  @include mobile {
+    flex-direction: column;
+    .mySlides {
+      height: 60%;
+    }
+    .row {
+      .column {
+        width: 60px;
+        height: 100px;
+      }
+    }
+  }
+}

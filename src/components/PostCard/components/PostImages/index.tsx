@@ -1,4 +1,5 @@
 import React from 'react';
+import { useGlobal } from '../../../../contex/GlobalContext';
 import { Image } from '../../../../utils/types';
 
 export type PostImagesProps = {
@@ -6,6 +7,8 @@ export type PostImagesProps = {
 };
 
 function PostImages({ images }: PostImagesProps) {
+  const { changeImages, openModal } = useGlobal();
+
   const calcWidth = (lenght: number) => {
     if (lenght === 1) {
       return 'fullWith';
@@ -21,26 +24,42 @@ function PostImages({ images }: PostImagesProps) {
 
   function activeGallery(length: number, index: number) {
     if (length > 4 && index === 3) {
-      return <span>+ {length - index - 1}</span>;
+      return true;
     }
-    return null;
+    return false;
   }
 
   if (!images) return null;
 
+  function handleOnclick(array: Image[]) {
+    changeImages(array);
+    openModal();
+  }
+
   return (
     <div className={`images ${calcWidth(images.length || 0)}`}>
-      {images.map((img, index) => (
-        <div
-          className="image"
-          key={img.id}
-          style={{
-            background: `url(${img.url}) center / cover`,
-          }}
-        >
-          {activeGallery(images?.length || 0, index)}
-        </div>
-      ))}
+      {images.map((img, index) =>
+        activeGallery(images.length, index) ? (
+          <div
+            onClick={() => handleOnclick(images)}
+            className="image"
+            key={img.id}
+            style={{
+              background: `url(${img.url}) center / cover`,
+            }}
+          >
+            <span>+ {images.length - index - 1}</span>
+          </div>
+        ) : (
+          <div
+            className="image"
+            key={img.id}
+            style={{
+              background: `url(${img.url}) center / cover`,
+            }}
+          />
+        )
+      )}
     </div>
   );
 }

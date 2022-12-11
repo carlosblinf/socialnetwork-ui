@@ -20,16 +20,22 @@ export const toRelativeTime = (dateString: string, locale = 'en') => {
   // less than 60 minutes, show minutes
   if (elapsedSeconds < 3600) {
     const elapsedMinutes = Math.round(elapsedSeconds / 60);
-    return `${elapsedMinutes} m`;
+    return locale === 'en'
+      ? `${elapsedMinutes} minutes ago`
+      : ` Hace ${elapsedMinutes} minutos`;
   }
 
   // less than 24 hours, show hours
   if (elapsedSeconds < 86400) {
     const elapsedHours = Math.round(elapsedSeconds / 3600);
-    return `${elapsedHours} h`;
+    return locale === 'en'
+      ? `${elapsedHours} hours ago`
+      : ` Hace ${elapsedHours} horas`;
   }
 
   // more than 24 hours, show days
   const elapsedDays = Math.round(elapsedSeconds / 86400);
-  return `${elapsedDays} d`;
+  return locale === 'en'
+    ? `${elapsedDays} days ago`
+    : ` Hace ${elapsedDays} días`;
 };

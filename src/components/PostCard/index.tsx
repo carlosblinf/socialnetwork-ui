@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Post } from '../../utils/types';
+import Comments from '../Comments';
 import PostHeader from './components/PostHeader';
 import PostImages from './components/PostImages';
 import Reactions from './components/Reactions';
@@ -10,6 +11,8 @@ export type PostProps = {
 };
 
 function PostCard({ post }: PostProps) {
+  const [showComments, setShowComments] = useState(false);
+
   return (
     <div className="post">
       <PostHeader author={post.author} date={post.date} />
@@ -18,7 +21,12 @@ function PostCard({ post }: PostProps) {
 
       <PostImages images={post.images} />
 
-      <Reactions />
+      <Reactions
+        showComments={showComments}
+        setShowComments={setShowComments}
+      />
+
+      {showComments && <Comments />}
     </div>
   );
 }

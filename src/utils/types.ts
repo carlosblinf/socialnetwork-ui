@@ -17,3 +17,16 @@ export interface Image {
   id: number;
   url: string;
 }
+
+export interface Comment {
+  id: string;
+  text: string;
+  userId: string;
+  author: {
+    id: string;
+    firstName: string;
+    lastName: string;
+    avatar: string;
+  };
+  date: string;
+}

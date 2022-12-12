@@ -6,16 +6,20 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
 import Register from './pages/Register';
-import PrivateRoutes from './PrivateRoutes';
+import PrivateRoutes, { LoggedRoute } from './PrivateRoutes';
 
 const routes = createBrowserRouter([
   {
     path: '/login',
-    element: <Login />,
+    element: (
+      <LoggedRoute component={<Login />}  />
+    ),
   },
   {
     path: '/register',
-    element: <Register />,
+    element: (
+      <LoggedRoute component={<Register />}  />
+    ),
   },
   {
     path: '/error-404',

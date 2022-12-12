@@ -43,3 +43,17 @@ export interface User {
   password?: string;
   gender: string;
 }
+
+export type NewUserFrom = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  username: string;
+  password: string;
+  gender: string;
+};
+
+export type UserCredential = {
+  username: string;
+  password: string;
+};

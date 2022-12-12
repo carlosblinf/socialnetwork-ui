@@ -72,24 +72,6 @@
         font-size: 3em;
       }
 
-      form {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-
-        input {
-          border: none;
-          border-bottom: 1px solid lightgray;
-          padding: 20px 10px;
-          font-size: 1.2rem;
-        }
-        button {
-          background-color: #090476;
-          background-color: rebeccapurple;
-          color: white;
-          @include button();
-        }
-      }
       span {
         display: none;
       }

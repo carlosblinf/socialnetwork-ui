@@ -3,22 +3,15 @@
 form {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 30px;
 
   .formGroup {
     input {
       width: 100%;
       border: none;
       border-bottom: 1px solid lightgray;
-      padding: 10px;
+      padding: 20px 10px;
       font-size: 1.2rem;
-    }
-    select {
-      width: 50%;
-      padding: 10px;
-      border: none;
-      border-bottom: 1px solid lightgray;
-      font-size: 1rem;
     }
   }
   button {

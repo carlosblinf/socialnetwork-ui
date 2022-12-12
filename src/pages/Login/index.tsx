@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './login.module.scss';
+import LoginForm from '../../components/LoginForm/index';
 
 function Login() {
   return (
@@ -20,11 +21,7 @@ function Login() {
         </div>
         <div className={`${styles.right} ${styles.flex}`}>
           <h1>Login</h1>
-          <form>
-            <input type="text" name="username" placeholder="Username" />
-            <input type="password" name="password" placeholder="Password" />
-            <button type="submit">Login</button>
-          </form>
+          <LoginForm />
           <span>
             Don't yo have an account? <Link to="/register">Register</Link>
           </span>

@@ -1,23 +1,14 @@
 import { createContext, useContext, useState, useEffect, useMemo } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { getImageUrl } from '../utils/infoUtils';
-import { User } from '../utils/types';
+import { User, NewUserFrom, UserCredential } from '../utils/types';
 import { ThemeProviderProps } from './ThemeModeContext';
-
-type NewUser = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  username: string;
-  password: string;
-  gender: string;
-};
 
 type AuthContextType = {
   authUser: User | null;
   isLogin: boolean;
-  registerUser: (user: NewUser) => void;
-  login: (username: string, pwd: string) => void;
+  registerUser: (user: NewUserFrom) => void;
+  login: (credentials: UserCredential) => void;
   logout: () => void;
 };
 
@@ -57,12 +48,12 @@ export function AuthContextProvider({ children }: ThemeProviderProps) {
     localStorage.setItem('user', JSON.stringify(authUser));
   }, [currentUser]);
 
-  const toLogin = () => {
-    setIsLogin(true);
+  useEffect(() => {
     localStorage.setItem('auth', JSON.stringify(isLogin));
-  };
+    console.log('eff', isLogin);
+  }, [isLogin]);
 
-  const registerUser = (user: NewUser) => {
+  const registerUser = (user: NewUserFrom) => {
     const newUser: User = {
       ...user,
       id: uuidv4(),
@@ -73,14 +64,18 @@ export function AuthContextProvider({ children }: ThemeProviderProps) {
 
     setAuthUser(newUser);
 
-    toLogin();
+    setIsLogin(true);
   };
 
-  const login = (username: string, pwd: string) => {
+  const login = (credentials: UserCredential) => {
     if (localStorageUser) {
       const user = JSON.parse(localStorageUser);
 
-      if (username === user.username && pwd === user.pwd) toLogin();
+      if (
+        credentials.username === user.username &&
+        credentials.password === user.password
+      )
+        setIsLogin(true);
 
       throw new Error('username or password incorrect!');
     }

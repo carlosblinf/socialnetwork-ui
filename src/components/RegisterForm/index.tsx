@@ -4,16 +4,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import './RegisterForm.scss';
 import { useAuth } from '../../contex/AuthContext';
-
-type RegisterSubmitForm = {
-  firstName: string;
-  lastName: string;
-  username: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-  gender: string;
-};
+import { useNavigate } from 'react-router-dom';
+import { NewUserFrom } from '../../utils/types';
 
 function RegisterForm() {
   const validationSchema = Yup.object().shape({
@@ -40,14 +32,16 @@ function RegisterForm() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<RegisterSubmitForm>({
+  } = useForm<NewUserFrom>({
     resolver: yupResolver(validationSchema),
   });
 
   const { registerUser } = useAuth();
+  const navigate = useNavigate();
 
-  const onSubmit = (data: RegisterSubmitForm) => {
+  const onSubmit = (data: NewUserFrom) => {
     registerUser(data);
+    navigate('/');
   };
 
   return (
@@ -86,7 +80,7 @@ function RegisterForm() {
           placeholder="Username"
           className={`form-control ${errors.username ? 'is-invalid' : ''}`}
         />
-        <div className="invalid-feedback">{errors.password?.message}</div>
+        <div className="invalid-feedback">{errors.username?.message}</div>
       </div>
       <div className="formGroup">
         <input
@@ -102,7 +96,9 @@ function RegisterForm() {
           type="password"
           {...register('confirmPassword')}
           placeholder="Confirm password"
-          className={`form-control ${errors.confirmPassword ? 'is-invalid' : ''}`}
+          className={`form-control ${
+            errors.confirmPassword ? 'is-invalid' : ''
+          }`}
         />
         <div className="invalid-feedback">
           {errors.confirmPassword?.message}

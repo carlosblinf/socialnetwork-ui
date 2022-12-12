@@ -1,20 +1,23 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Route } from 'react-router-dom';
+import { useAuth } from './contex/AuthContext';
 
 type PrivateRoutesProps = {
   component: React.ReactElement;
   roles: Array<any>;
 };
 
-function PrivateRoutes({ component, roles }: PrivateRoutesProps) {
-  const currentUser = {
-    id: 1,
-    role: 'user',
-  };
-  const userHasRequiredRole = roles.includes(currentUser?.role);
+type LoggedRouteProps = {
+  component: React.ReactElement;
+};
 
-  if (!currentUser?.id) {
-    return <Navigate to="/login" />;
+function PrivateRoutes({ component, roles }: PrivateRoutesProps) {
+  const { authUser, isLogin } = useAuth();
+
+  const userHasRequiredRole = roles.includes(authUser?.role);
+
+  if (!authUser?.id || !isLogin) {
+    return <Navigate replace to="/login" />;
   }
   if (!userHasRequiredRole) {
     return <Navigate to="/accessdenied" />;
@@ -22,5 +25,15 @@ function PrivateRoutes({ component, roles }: PrivateRoutesProps) {
 
   return component;
 }
+
+export const LoggedRoute = ({ component }: LoggedRouteProps) => {
+  const { authUser, isLogin } = useAuth();
+
+  const userLogged = authUser?.id && isLogin;
+
+  if (userLogged) return <Navigate replace to="/" />;
+
+  return component;
+};
 
 export default PrivateRoutes;

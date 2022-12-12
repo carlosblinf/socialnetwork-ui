@@ -27,7 +27,7 @@ function UserRequest() {
   return (
     <>
       {requests?.map((req) => (
-        <div key={req.id} className="card">
+        <div key={req.id} className="requestCard cardW">
           <RequestCard requestId={req.id} user={req.user} />
         </div>
       ))}

@@ -15,7 +15,7 @@ function PostCard({ post }: PostProps) {
   const [liked, setLiked] = useState(false);
 
   return (
-    <div className="post">
+    <div className="post card">
       <PostHeader author={post.author} date={post.date} />
 
       <p className="postText">{post.text}</p>

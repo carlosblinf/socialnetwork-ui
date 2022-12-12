@@ -4,7 +4,7 @@ import styles from './register.module.scss';
 function Register() {
   return (
     <div className={styles.register}>
-      <div className={styles.card}>
+      <div className={styles.registerCard}>
         <div className={`${styles.left} ${styles.flex}`}>
           <h1>Social Network.</h1>
           <p>

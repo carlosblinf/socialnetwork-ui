@@ -9,7 +9,7 @@ function Leftbar() {
   return (
     <div className="leftbar">
       <div className="containerLeftbar">
-        <div className="user">
+        <div className="user cardW">
           <img src="user_m.jpg" alt="info" />
           <div className="info">
             <div>Carlos Ernesto</div>
@@ -17,7 +17,7 @@ function Leftbar() {
           </div>
         </div>
 
-        <div className="menu">
+        <div className="menu cardW">
           <div className="item">
             <AiOutlineHome />
             <span>Home Page</span>
@@ -44,7 +44,7 @@ function Leftbar() {
           </div>
         </div>
 
-        <div className="others">
+        <div className="others cardW">
           <div className="title">
             <span>My Community</span>
           </div>

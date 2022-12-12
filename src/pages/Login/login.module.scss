@@ -13,7 +13,7 @@
   height: 100vh;
   background-color: #b0b5f8;
 
-  .card {
+  .loginCard {
     display: flex;
     width: 60%;
     min-height: 600px;
@@ -97,13 +97,13 @@
   }
 
   @media (max-width: 1400px) {
-    .card {
+    .loginCard {
       width: 80%;
     }
   }
 
   @media (max-width: 1200px) {
-    .card {
+    .loginCard {
       .left {
         h1 {
           font-size: 4.25rem;
@@ -114,7 +114,7 @@
   }
 
   @media (max-width: 900px) {
-    .card {
+    .loginCard {
       .left {
         display: none;
       }
@@ -133,7 +133,7 @@
     }
   }
   @media (max-width: 400px) {
-    .card {
+    .loginCard {
       .right {
         form {
           width: 80%;

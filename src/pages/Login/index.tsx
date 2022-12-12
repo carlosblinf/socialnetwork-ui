@@ -4,7 +4,7 @@ import styles from './login.module.scss';
 function Login() {
   return (
     <div className={styles.login}>
-      <div className={styles.card}>
+      <div className={styles.loginCard}>
         <div className={`${styles.left} ${styles.flex}`}>
           <h1>Hello World.</h1>
           <p>

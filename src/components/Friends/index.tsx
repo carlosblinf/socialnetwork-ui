@@ -55,7 +55,7 @@ export const onlines = [
 
 function Friends() {
   return (
-    <div className="container">
+    <div className="container cardW">
       {onlines?.map((user) => (
         <div key={user.id} className="itemFriend">
           <FriendCard user={user} />

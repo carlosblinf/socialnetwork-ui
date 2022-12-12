@@ -1,4 +1,5 @@
 import React from 'react';
+import WriteComment from '../WriteComment';
 import './Comments.scss';
 import CommentCard from './components/CommentCard';
 
@@ -33,6 +34,7 @@ function Comments() {
   return (
     <div className="commemts">
       <div className="containerComment">
+        <WriteComment />
         {comments.map((com) => (
           <CommentCard key={com.id} comment={com} />
         ))}

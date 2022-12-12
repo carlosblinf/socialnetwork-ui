@@ -12,6 +12,7 @@ export type PostProps = {
 
 function PostCard({ post }: PostProps) {
   const [showComments, setShowComments] = useState(false);
+  const [liked, setLiked] = useState(false);
 
   return (
     <div className="post">
@@ -22,6 +23,8 @@ function PostCard({ post }: PostProps) {
       <PostImages images={post.images} />
 
       <Reactions
+        liked={liked}
+        setLiked={setLiked}
         showComments={showComments}
         setShowComments={setShowComments}
       />

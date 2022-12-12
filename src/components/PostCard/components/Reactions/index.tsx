@@ -5,15 +5,24 @@ import { MdOutlineTextsms } from 'react-icons/md';
 import './Reactions.scss';
 
 type CommentsProps = {
+  liked: boolean;
+  setLiked: (like: boolean) => void;
   showComments: boolean;
   setShowComments: (show: boolean) => void;
 };
 
-function Reactions({ showComments, setShowComments }: CommentsProps) {
-  const liked = true;
+function Reactions({
+  liked,
+  setLiked,
+  showComments,
+  setShowComments,
+}: CommentsProps) {
+  // :TODO
+  const shared = () => {};
+
   return (
     <div className="reactions">
-      <div className="item">
+      <div className="item" onClick={() => setLiked(!liked)}>
         {liked ? <AiOutlineHeart /> : <AiFillHeart />}
         12 Likes
       </div>
@@ -21,7 +30,7 @@ function Reactions({ showComments, setShowComments }: CommentsProps) {
         <MdOutlineTextsms />
         Comments
       </div>
-      <div className="item">
+      <div className="item" onClick={() => shared()}>
         <BsShareFill />
         Share
       </div>

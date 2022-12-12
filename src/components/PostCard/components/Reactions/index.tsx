@@ -23,7 +23,7 @@ function Reactions({
   return (
     <div className="reactions">
       <div className="item" onClick={() => setLiked(!liked)}>
-        {liked ? <AiOutlineHeart /> : <AiFillHeart />}
+        {liked ? <AiFillHeart /> : <AiOutlineHeart />}
         12 Likes
       </div>
       <div className="item" onClick={() => setShowComments(!showComments)}>

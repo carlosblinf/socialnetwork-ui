@@ -4,16 +4,19 @@ import { MdOutlineVideoSettings } from 'react-icons/md';
 import { BsPerson } from 'react-icons/bs';
 import { IoSettingsOutline } from 'react-icons/io5';
 import './Leftbar.scss';
+import { useAuth } from '../../contex/AuthContext';
 
 function Leftbar() {
+  const { authUser } = useAuth();
+
   return (
     <div className="leftbar">
       <div className="containerLeftbar">
         <div className="user cardW">
-          <img src="user_m.jpg" alt="info" />
+          <img src={authUser?.avatar} alt="info" />
           <div className="info">
-            <div>Carlos Ernesto</div>
-            <span>@carlosblinf</span>
+            <div>{authUser?.firstName}</div>
+            <span>@{authUser?.username}</span>
           </div>
         </div>
 

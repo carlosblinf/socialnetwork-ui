@@ -1,3 +1,4 @@
+import { useAuth } from '../../contex/AuthContext';
 import './Stories.scss';
 
 const stories = [
@@ -9,7 +10,7 @@ const stories = [
       lastName: 'Barrows',
       avatar: 'https://randomuser.me/api/portraits/men/78.jpg',
     },
-    image: 'https://images.pexels.com/photos/6033681/pexels-photo-6033681.jpeg'
+    image: 'https://images.pexels.com/photos/6033681/pexels-photo-6033681.jpeg',
   },
   {
     id: 2,
@@ -19,7 +20,7 @@ const stories = [
       lastName: 'Reichert',
       avatar: 'https://randomuser.me/api/portraits/women/79.jpg',
     },
-    image: 'https://images.pexels.com/photos/6087668/pexels-photo-6087668.jpeg'
+    image: 'https://images.pexels.com/photos/6087668/pexels-photo-6087668.jpeg',
   },
   {
     id: 3,
@@ -29,7 +30,7 @@ const stories = [
       lastName: 'Cummerata',
       avatar: 'https://randomuser.me/api/portraits/men/50.jpg',
     },
-    image: 'https://images.pexels.com/photos/6061857/pexels-photo-6061857.jpeg'
+    image: 'https://images.pexels.com/photos/6061857/pexels-photo-6061857.jpeg',
   },
   {
     id: 4,
@@ -39,7 +40,7 @@ const stories = [
       lastName: 'Valerion',
       avatar: 'https://randomuser.me/api/portraits/women/59.jpg',
     },
-    image: 'https://images.pexels.com/photos/6061698/pexels-photo-6061698.jpeg'
+    image: 'https://images.pexels.com/photos/6061698/pexels-photo-6061698.jpeg',
   },
   {
     id: 5,
@@ -49,10 +50,12 @@ const stories = [
       lastName: 'Abbott asdasd',
       avatar: 'https://randomuser.me/api/portraits/women/18.jpg',
     },
-    image: 'https://images.pexels.com/photos/6062009/pexels-photo-6062009.jpeg'
-  }
+    image: 'https://images.pexels.com/photos/6062009/pexels-photo-6062009.jpeg',
+  },
 ];
 function Stories() {
+  const { authUser } = useAuth();
+
   return (
     <div className="stoires">
       <div
@@ -62,7 +65,7 @@ function Stories() {
           opacity: 0.9,
         }}
       >
-        <img src="user_m.jpg" alt="user" />
+        <img src={authUser?.avatar} alt="user" />
         <div className="add">
           <span>
             <button type="button">+</button>

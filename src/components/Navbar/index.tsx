@@ -9,9 +9,11 @@ import { IoIosNotificationsOutline } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import './Navbar.scss';
 import { useTheme } from '../../contex/ThemeModeContext';
+import { useAuth } from '../../contex/AuthContext';
 
 function Navbar() {
   const { theme, toggle } = useTheme();
+  const { authUser } = useAuth();
 
   return (
     <div className="navbar">
@@ -49,7 +51,7 @@ function Navbar() {
           <CgMenuGridO />
         </div>
         <div className="profile">
-          <img src="user_m.jpg" alt="user" />
+          <img src={authUser?.avatar} alt="user" />
         </div>
       </div>
     </div>

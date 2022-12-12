@@ -41,6 +41,4 @@ export const toRelativeTime = (dateString: string, locale = 'en') => {
 };
 
 export const getImageUrl = (gender: string): string =>
-  gender === 'male'
-    ? 'https://randomuser.me/api/portraits/men/78.jpg'
-    : 'https://randomuser.me/api/portraits/women/79.jpg';
+  gender === 'male' ? '/user_m.jpg' : '/user_f.jpg';

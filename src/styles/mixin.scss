@@ -41,6 +41,15 @@
   }
 }
 
+@mixin button {
+  width: 50%;
+  border: none;
+  padding: 15px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 @mixin item {
   display: flex;
   align-items: center;

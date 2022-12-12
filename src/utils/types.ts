@@ -30,3 +30,16 @@ export interface Comment {
   };
   date: string;
 }
+
+export interface User {
+  id: string;
+  firstName: string;
+  lastName: string;
+  role: string;
+  avatar: string;
+  coverImage: string;
+  email: string;
+  username: string;
+  password?: string;
+  gender: string;
+}

@@ -9,16 +9,13 @@ import {
 } from 'react';
 import ModalImages from '../components/ModalImages/index';
 import { Image } from '../utils/types';
+import { ThemeProviderProps } from './ThemeModeContext';
 
 type GlobalContextType = {
   openModal: () => void;
   closeModal: () => void;
   images: Image[];
   changeImages: (array: Image[]) => void;
-};
-
-type ThemeProviderProps = {
-  children: ReactNode;
 };
 
 const GlobalContext = createContext({} as GlobalContextType);

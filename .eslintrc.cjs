@@ -25,5 +25,13 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/anchor-is-valid': 'off',
+    'react-hooks/exhaustive-deps': 'warn',
+    'react/jsx-props-no-spreading': [
+      {
+        html: 'ignore' | 'enforce',
+        // custom: 'ignore' | 'enforce',
+        // exceptions: ['Image', 'img'],
+      },
+    ],
   },
 };

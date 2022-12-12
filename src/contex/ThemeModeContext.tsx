@@ -7,7 +7,7 @@ import {
   useState,
 } from 'react';
 
-type ThemeProviderProps = {
+export type ThemeProviderProps = {
   children: ReactNode;
 };
 

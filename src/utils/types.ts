@@ -50,6 +50,7 @@ export type NewUserFrom = {
   email: string;
   username: string;
   password: string;
+  confirmPassword?: string;
   gender: string;
 };
 

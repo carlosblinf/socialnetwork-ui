@@ -11,15 +11,11 @@ import PrivateRoutes, { LoggedRoute } from './PrivateRoutes';
 const routes = createBrowserRouter([
   {
     path: '/login',
-    element: (
-      <LoggedRoute component={<Login />}  />
-    ),
+    element: <LoggedRoute component={<Login />} />,
   },
   {
     path: '/register',
-    element: (
-      <LoggedRoute component={<Register />}  />
-    ),
+    element: <LoggedRoute component={<Register />} />,
   },
   {
     path: '/error-404',
@@ -46,7 +42,7 @@ const routes = createBrowserRouter([
     ],
   },
   {
-    path: '*',
+    path: '/*',
     element: <Navigate to="/error-404" />,
   },
 ]);

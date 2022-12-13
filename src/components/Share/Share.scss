@@ -1,0 +1,113 @@
+@import '../../styles/mixin.scss';
+
+.share {
+  @include themify($themes) {
+    border-radius: 15px;
+    background-color: themed('bg');
+    color: themed('textColor');
+
+    .container {
+      padding: 20px;
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+
+        .left {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          gap: 20px;
+
+          @include userImg;
+
+          input {
+            border: none;
+            outline: none;
+            padding: 20px 10px;
+            background-color: transparent;
+            width: 100%;
+            color: themed('textColor');
+            background-color: themed('bgPrimary');
+          }
+          ::placeholder {
+            color: themed('bgHoverBlack');
+          }
+        }
+        .right {
+          position: relative;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          
+          img {
+            width: 60px;
+            height: 60px;
+            border-radius: 5px;
+            object-fit: cover;
+            position: relative;
+            cursor: pointer;
+          }
+
+          span {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: themed('bgHoverBlack');
+            cursor: pointer;
+          }
+        }
+      }
+
+      hr {
+        margin: 20px 0px;
+        border: none;
+        height: 0.5px;
+        background-color: themed('border');
+      }
+
+      .bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .left {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+
+          .item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+
+            img {
+              height: 20px;
+            }
+
+            span {
+              font-size: 12px;
+              color: gray;
+            }
+          }
+          @include mobile {
+            gap: 10px;
+            .item {
+              gap: 2px;
+            }
+          }
+        }
+        .right {
+          @include actionButton;
+
+          @include mobile {
+            button {
+              width: 65px;
+              padding: 10px 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

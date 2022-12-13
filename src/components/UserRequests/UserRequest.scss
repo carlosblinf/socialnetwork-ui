@@ -32,7 +32,7 @@
         cursor: pointer;
 
         &:first-child {
-          background-color: #1877f2;
+          background-color: $btnPrimary;
           color: white;
         }
         &:last-child {

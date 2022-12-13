@@ -12,7 +12,7 @@ interface ModalImagesProps {
 function ModalImages({ isOpen, images, closeModal }: ModalImagesProps) {
   if (!isOpen) return null;
 
-  if (!images || images.length < 4) return null;
+  if (!images || images.length < 1) return null;
 
   return (
     <div id="myModal" className="myModal">

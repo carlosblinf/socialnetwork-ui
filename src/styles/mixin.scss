@@ -41,6 +41,16 @@
   }
 }
 
+@mixin actionButton {
+  button {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: $btnPrimary;
+    color: white;
+    cursor: pointer;
+  }
+}
 @mixin button {
   width: 50%;
   border: none;
@@ -64,5 +74,6 @@
     width: 40px;
     height: 40px;
     border-radius: 15px;
+    object-fit: cover;
   }
 }

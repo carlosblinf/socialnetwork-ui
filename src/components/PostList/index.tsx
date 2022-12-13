@@ -15,31 +15,6 @@ export const posts = [
     images: [
       {
         id: 1,
-        url: 'https://images.pexels.com/photos/6033681/pexels-photo-6033681.jpeg',
-      },
-      {
-        id: 2,
-        url: 'https://images.pexels.com/photos/6087668/pexels-photo-6087668.jpeg',
-      },
-      {
-        id: 3,
-        url: 'https://images.pexels.com/photos/6061857/pexels-photo-6061857.jpeg',
-      },
-    ],
-  },
-  {
-    id: 'c85f6817-5e5a-4d75-9ad9-2e3a3f3c1fdb',
-    author: {
-      id: 'af88b4a4-9be8-4f82-bea3-48c0cf03e71a',
-      firstName: 'Alison',
-      lastName: 'Reichert',
-      avatar: 'https://randomuser.me/api/portraits/women/79.jpg',
-    },
-    date: '2022-12-08T23:14:19.560Z',
-    text: '¡Hola Sofía! Bienvenida a la red social. ¿De dónde eres?',
-    images: [
-      {
-        id: 1,
         url: 'https://images.pexels.com/photos/6087668/pexels-photo-6087668.jpeg',
       },
       {
@@ -64,6 +39,31 @@ export const posts = [
       },
       {
         id: 7,
+        url: 'https://images.pexels.com/photos/6061857/pexels-photo-6061857.jpeg',
+      },
+    ],
+  },
+  {
+    id: 'c85f6817-5e5a-4d75-9ad9-2e3a3f3c1fdb',
+    author: {
+      id: 'af88b4a4-9be8-4f82-bea3-48c0cf03e71a',
+      firstName: 'Alison',
+      lastName: 'Reichert',
+      avatar: 'https://randomuser.me/api/portraits/women/79.jpg',
+    },
+    date: '2022-12-08T23:14:19.560Z',
+    text: '¡Hola Sofía! Bienvenida a la red social. ¿De dónde eres?',
+    images: [
+      {
+        id: 1,
+        url: 'https://images.pexels.com/photos/6033681/pexels-photo-6033681.jpeg',
+      },
+      {
+        id: 2,
+        url: 'https://images.pexels.com/photos/6087668/pexels-photo-6087668.jpeg',
+      },
+      {
+        id: 3,
         url: 'https://images.pexels.com/photos/6061857/pexels-photo-6061857.jpeg',
       },
     ],

@@ -5,23 +5,22 @@ import './Share.scss';
 
 function Share() {
   const { authUser } = useAuth();
-  const [files, setFile] = useState<File[]>([]);
+  const [fileList, setFileList] = useState<File[]>([]);
   const { changeImages, openModal } = useGlobal();
 
-  useEffect(() => {}, [files]);
+  useEffect(() => {}, [fileList]);
 
   const handleOnFileChange = ({
     currentTarget: { files },
   }: React.ChangeEvent<HTMLInputElement>) => {
     if (files && files.length) {
-      setFile((prevFiles) => [...prevFiles, ...files]);
+      setFileList((prevFiles) => [...prevFiles, ...files]);
     }
   };
 
   const showImages = (): void => {
-    if (files && files.length) {
-      const arrayFiles = [...files];
-      let images = arrayFiles.map((file, index) => {
+    if (fileList && fileList.length) {
+      let images = fileList.map((file, index) => {
         return {
           id: index,
           url: URL.createObjectURL(file),
@@ -33,7 +32,7 @@ function Share() {
   };
 
   const deleteImages = (): void => {
-    setFile([]);
+    setFileList([]);
     changeImages([]);
   };
 
@@ -49,11 +48,11 @@ function Share() {
             />
           </div>
           <div className="right">
-            {files.length > 0 && (
+            {fileList.length > 0 && (
               <>
                 <img
                   alt="file"
-                  src={URL.createObjectURL(files[files.length - 1])}
+                  src={URL.createObjectURL(fileList[fileList.length - 1])}
                   onClick={() => showImages()}
                 />
                 <span onClick={() => deleteImages()}>&times;</span>

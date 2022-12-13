@@ -21,15 +21,25 @@ export class ToastManager {
   }
 
   public show(options: ToastOptions): void {
-    const toastId = Math.random().toString(36).substr(2, 9);
+    const toastId = Math.random().toString(36);
     const toast: ToastProps = {
       id: toastId,
       ...options,
       destroy: () => this.destroy(options.id ?? toastId),
     };
 
-    this.toasts = [toast, ...this.toasts];
-    this.render();
+    const index = this.toasts.findIndex((t) => t.id == toast.id);
+
+    if (index < 0) {
+      this.toasts = [toast, ...this.toasts];
+      this.render();
+    } else {
+      let toastFinded = this.toasts[index];
+      if (toastFinded.content != toast.content) {
+        this.toasts[index] = toast;
+        this.render();
+      }
+    }
   }
 
   public destroy(id: string): void {

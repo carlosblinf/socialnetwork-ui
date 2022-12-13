@@ -34,9 +34,3 @@ function Toast(props: ToastProps) {
 }
 
 export default Toast;
-
-// const shouldRerender = (prevProps: ToastProps, nextProps: ToastProps) => {
-//   return prevProps.id === nextProps.id;
-// };
-
-// export default React.memo(Toast, shouldRerender);

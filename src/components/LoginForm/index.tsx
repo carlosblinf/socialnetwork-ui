@@ -6,6 +6,7 @@ import './LoginForm.scss';
 import { useAuth } from '../../contex/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { UserCredential } from '../../utils/types';
+import { toast } from '../ToastManager';
 
 function LoginForm() {
   const validationSchema = Yup.object().shape({
@@ -25,8 +26,19 @@ function LoginForm() {
   const navigate = useNavigate();
 
   const onSubmit = (data: UserCredential) => {
-    login(data);
-    navigate('/');
+    try {
+      login(data);
+      navigate('/');
+    } catch (error) {
+      if (error instanceof Error) {
+        toast.show({
+          id: 'error-login',
+          title: 'Error Login',
+          content: error.message,
+          duration: 3000,
+        });
+      }
+    }
   };
 
   return (
@@ -49,7 +61,7 @@ function LoginForm() {
         />
         <div className="invalid-feedback">{errors.password?.message}</div>
       </div>
-      <button type="submit">Register</button>
+      <button type="submit">Login</button>
     </form>
   );
 }

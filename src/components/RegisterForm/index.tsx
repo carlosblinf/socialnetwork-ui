@@ -6,6 +6,7 @@ import './RegisterForm.scss';
 import { useAuth } from '../../contex/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { NewUserFrom } from '../../utils/types';
+import { toast } from '../ToastManager';
 
 function RegisterForm() {
   const validationSchema = Yup.object().shape({
@@ -40,8 +41,19 @@ function RegisterForm() {
   const navigate = useNavigate();
 
   const onSubmit = (data: NewUserFrom) => {
-    registerUser(data);
-    navigate('/');
+    try {
+      registerUser(data);
+      navigate('/');
+    } catch (error) {
+      if (error instanceof Error) {
+        toast.show({
+          id: 'error-register',
+          title: 'Error Register',
+          content: error.message,
+          duration: 3000,
+        });
+      }
+    }
   };
 
   return (

@@ -50,7 +50,6 @@ export function AuthContextProvider({ children }: ThemeProviderProps) {
 
   useEffect(() => {
     localStorage.setItem('auth', JSON.stringify(isLogin));
-    console.log('eff', isLogin);
   }, [isLogin]);
 
   const registerUser = (user: NewUserFrom) => {
@@ -61,6 +60,15 @@ export function AuthContextProvider({ children }: ThemeProviderProps) {
       coverImage: '/default_cover',
       role: 'user',
     };
+    if (localStorageUser) {
+      const userSaved = JSON.parse(localStorageUser);
+
+      if (
+        userSaved.username === user.username ||
+        userSaved.email === user.email
+      )
+        throw new Error('You already have an account, please try to login!');
+    }
 
     setAuthUser(newUser);
 
@@ -76,10 +84,8 @@ export function AuthContextProvider({ children }: ThemeProviderProps) {
         credentials.password === user.password
       )
         setIsLogin(true);
-
-      throw new Error('username or password incorrect!');
-    }
-    throw new Error('you have register!');
+      else throw new Error('Username or password incorrect!');
+    } else throw new Error('You need to register!');
   };
 
   const logout = () => {

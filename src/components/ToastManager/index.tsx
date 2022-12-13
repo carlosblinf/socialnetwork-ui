@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import Toast, { ToastProps } from '../Toast';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 
 interface ToastOptions {
   id?: string;
@@ -14,18 +14,17 @@ export class ToastManager {
   private toasts: ToastProps[] = [];
 
   constructor() {
-    const body = document.getElementsByTagName("body")[0] as HTMLBodyElement;
-    const toastContainer = document.createElement("div") as HTMLDivElement;
-    toastContainer.id = "toast-container-main";
-    body.insertAdjacentElement("beforeend", toastContainer);
+    const toastContainer = document.createElement('div') as HTMLDivElement;
+    toastContainer.id = 'toast-container-main';
     this.containerRef = toastContainer;
+    document.body.appendChild(this.containerRef);
   }
 
   public show(options: ToastOptions): void {
     const toastId = Math.random().toString(36).substr(2, 9);
     const toast: ToastProps = {
       id: toastId,
-      ...options, // if id is passed within options, it will overwrite the auto-generated one
+      ...options,
       destroy: () => this.destroy(options.id ?? toastId),
     };
 
@@ -42,7 +41,7 @@ export class ToastManager {
     const toastsList = this.toasts.map((toastProps: ToastProps) => (
       <Toast key={toastProps.id} {...toastProps} />
     ));
-    ReactDOM.render(toastsList, this.containerRef);
+    ReactDOM.createRoot(this.containerRef).render(toastsList);
   }
 }
 

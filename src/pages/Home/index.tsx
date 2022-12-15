@@ -1,4 +1,4 @@
-import PostList from '../../components/PostList';
+import HomePostContainer from './components/HomePostContainer';
 import Share from '../../components/Share';
 import Stories from '../../components/Stories';
 import './Home.scss';
@@ -9,7 +9,7 @@ function Home() {
       <div className="containerHome">
         <Stories />
         <Share />
-        <PostList />
+        <HomePostContainer />
       </div>
     </div>
   );

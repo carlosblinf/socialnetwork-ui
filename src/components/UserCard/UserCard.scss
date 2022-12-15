@@ -1,0 +1,26 @@
+@import '../../styles/mixin.scss';
+
+.user {
+  @include themify($themes) {
+    display: flex;
+    align-items: center;
+    background-color: themed('bgSecondary');
+    padding: 20px;
+    border-radius: 10px;
+    gap: 10px;
+    color: themed('textColorPrimary');
+
+    @include userImg;
+
+    .info {
+      font-size: 1rem;
+      line-height: 15px;
+      div {
+        font-weight: bold;
+      }
+      span {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

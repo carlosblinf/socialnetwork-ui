@@ -1,0 +1,40 @@
+@import '../../styles/mixin.scss';
+
+.comunity {
+  @include themify($themes) {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: themed('bgSecondary');
+
+    .title {
+      padding: 0 15px;
+      font-size: 1.2rem;
+      color: themed('textColorSecondary');
+    }
+
+    .item {
+      @include item;
+
+      img {
+        width: 28px;
+        height: 28px;
+        border-radius: 15px;
+      }
+
+      div {
+        width: 120px;
+        overflow: hidden;
+      }
+
+      span {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        padding: 1px;
+        text-align: center;
+        background-color: #f95e5e;
+        color: white;
+      }
+    }
+  }
+}

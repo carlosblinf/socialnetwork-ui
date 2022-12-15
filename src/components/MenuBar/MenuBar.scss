@@ -1,0 +1,28 @@
+@import '../../styles/mixin.scss';
+
+.menu {
+  @include themify($themes) {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: themed('bgSecondary');
+
+    .item {
+      @include item;
+      color: themed('textColorSecondary');
+
+      svg {
+        font-size: 2rem;
+      }
+
+      span {
+        font-weight: bold;
+      }
+
+      &:hover {
+        border-radius: 5px;
+        background-color: #2f80ed;
+        color: white;
+      }
+    }
+  }
+}

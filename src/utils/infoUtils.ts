@@ -1,6 +1,6 @@
-import { Author } from './types';
+import { Author, User } from './types';
 
-export const fullName = (author: Author) =>
+export const fullName = (author: Author | User) =>
   `${author.firstName} ${author.lastName}`;
 
 export const toRelativeTime = (dateString: string, locale = 'en') => {

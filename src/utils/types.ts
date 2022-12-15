@@ -58,3 +58,9 @@ export type UserCredential = {
   username: string;
   password: string;
 };
+
+export enum SocialStorage {
+  SOCIAL_USER = 'social_user',
+  SOCIAL_AUTH = 'social_auth',
+  SOCIAL_THEME = 'social_theme',
+}

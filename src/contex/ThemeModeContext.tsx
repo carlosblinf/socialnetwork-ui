@@ -6,6 +6,7 @@ import {
   useEffect,
   useState,
 } from 'react';
+import { SocialStorage } from '../utils/types';
 
 export type ThemeProviderProps = {
   children: ReactNode;
@@ -27,7 +28,7 @@ const isBrowserDefaultDark = () =>
   window.matchMedia('(prefers-color-scheme: dark)').matches;
 
 const getDefaultTheme = (): string => {
-  const localStorageTheme = localStorage.getItem('theme');
+  const localStorageTheme = localStorage.getItem(SocialStorage.SOCIAL_THEME);
   const browserDefault = isBrowserDefaultDark() ? 'dark' : 'light';
   return localStorageTheme || browserDefault;
 };
@@ -39,7 +40,7 @@ export function ThemeContextProvider({ children }: ThemeProviderProps) {
     setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
 
   useEffect(() => {
-    localStorage.setItem('theme', theme);
+    localStorage.setItem(SocialStorage.SOCIAL_THEME, theme);
   }, [theme]);
 
   return (

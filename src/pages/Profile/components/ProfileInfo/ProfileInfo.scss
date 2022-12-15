@@ -1,0 +1,114 @@
+@import '../../../../styles/mixin.scss';
+
+.profileInfo {
+  @include themify($themes) {
+    .profileContainer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 200px;
+      padding: 10px;
+      border-radius: 0 0 15px 15px;
+      background-color: themed('bgSecondary');
+      color: themed('textColorPrimary');
+
+      .left {
+        flex: 2;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        gap: 10px;
+        .avatar {
+          position: relative;
+          bottom: 120px;
+          width: 180px;
+          height: 180px;
+          margin: auto;
+          border-radius: 50%;
+          object-fit: cover;
+          object-position: center;
+        }
+
+        .info {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          span {
+            &:first-child {
+              font-size: 1.5rem;
+            }
+            &:nth-child(2) {
+              color: themed('textColorSecondary');
+              margin-bottom: 2rem;
+            }
+          }
+          .socials {
+            display: flex;
+            justify-content: space-between;
+            font-size: 2rem;
+            a {
+              width: 30px;
+              svg {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+      .right {
+        flex: 1;
+        display: flex;
+        text-align: center;
+        gap: 15px;
+
+        button {
+          display: flex;
+          align-items: center;
+
+          svg {
+            font-size: 1.2rem;
+          }
+          &:nth-child(2) {
+            display: flex;
+            align-items: center;
+            padding: 14px 20px;
+            background-color: #e4e6eb;
+            color: black;
+          }
+        }
+        @include actionButton;
+      }
+    }
+    // @include tablet {
+    //   padding: 20px;
+    // }
+    @include mobile {
+      padding: 0px;
+      .profileContainer {
+        flex-direction: column;
+        gap: 5px;
+        .left {
+          flex-direction: column;
+          .avatar {
+            position: static;
+          }
+          //   order: 2;
+        }
+        .center {
+          order: 1;
+          button {
+            width: 65px;
+            padding: 10px 5px;
+          }
+        }
+        .right {
+          //   order: -1;
+          //   align-self: flex-end;
+        }
+      }
+    }
+  }
+}

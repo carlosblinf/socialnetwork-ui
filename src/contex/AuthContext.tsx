@@ -1,7 +1,12 @@
 import { createContext, useContext, useState, useEffect, useMemo } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { getImageUrl } from '../utils/infoUtils';
-import { User, NewUserFrom, UserCredential } from '../utils/types';
+import {
+  User,
+  NewUserFrom,
+  UserCredential,
+  SocialStorage,
+} from '../utils/types';
 import { ThemeProviderProps } from './ThemeModeContext';
 
 type AuthContextType = {
@@ -16,8 +21,8 @@ const AuthContext = createContext({} as AuthContextType);
 
 export const useAuth = () => useContext(AuthContext);
 
-const localStorageUser = localStorage.getItem('user');
-const localStorageisLoging = localStorage.getItem('auth');
+const localStorageUser = localStorage.getItem(SocialStorage.SOCIAL_USER);
+const localStorageisLoging = localStorage.getItem(SocialStorage.SOCIAL_AUTH);
 
 export function AuthContextProvider({ children }: ThemeProviderProps) {
   const [authUser, setAuthUser] = useState<User | null>(
@@ -45,11 +50,11 @@ export function AuthContextProvider({ children }: ThemeProviderProps) {
   );
 
   useEffect(() => {
-    localStorage.setItem('user', JSON.stringify(authUser));
+    localStorage.setItem(SocialStorage.SOCIAL_USER, JSON.stringify(authUser));
   }, [currentUser]);
 
   useEffect(() => {
-    localStorage.setItem('auth', JSON.stringify(isLogin));
+    localStorage.setItem(SocialStorage.SOCIAL_AUTH, JSON.stringify(isLogin));
   }, [isLogin]);
 
   const registerUser = (user: NewUserFrom) => {
@@ -57,7 +62,7 @@ export function AuthContextProvider({ children }: ThemeProviderProps) {
       ...user,
       id: uuidv4(),
       avatar: getImageUrl(user.gender),
-      coverImage: '/default_cover',
+      coverImage: '/default_cover.jpg',
       role: 'user',
     };
     if (localStorageUser) {

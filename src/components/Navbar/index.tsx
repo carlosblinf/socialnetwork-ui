@@ -50,7 +50,7 @@ function Navbar() {
         <div className="action">
           <CgMenuGridO />
         </div>
-        <div className="profile">
+        <div className="profileMenu">
           <img src={authUser?.avatar} alt="user" />
         </div>
       </div>

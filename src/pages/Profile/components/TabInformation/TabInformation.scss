@@ -1,0 +1,28 @@
+@import '../../../../styles/mixin.scss';
+
+.tabInformation {
+  @include themify($themes) {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 80px;
+    background-color: themed('bgSecondary');
+    color: themed('textColorPrimary');
+
+    .personalInfo {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .row {
+        display: flex;
+        justify-content: flex-start;
+
+        .column {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+      }
+    }
+  }
+}

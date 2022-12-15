@@ -1,0 +1,48 @@
+@import '../../../../styles/mixin.scss';
+
+.tabContainer {
+  @include themify($themes) {
+    font-family: sans-serif;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+
+    .tabs {
+      .tablist {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: themed('bgSecondary');
+        border-bottom: 1px solid #dee2e6;
+
+        button {
+          display: block;
+          padding: 0.5rem 1rem;
+          outline: none;
+          border: 1px solid transparent;
+          transition: border 0.2s ease-in-out 0s;
+          background-color: themed('bgSecondary');
+          color: themed('textColorSecondary');
+          cursor: pointer;
+
+          &.active,
+          &:focus,
+          &:hover {
+            border-width: 1px;
+            border-color: #e9ecef #e9ecef #b41c1c;
+          }
+
+          &.active {
+            color: themed('textColorPrimary');
+            background-color: themed('bgPrimary');
+          }
+        }
+      }
+
+      .tabpanel {
+        text-align: left;
+        padding: 0.5rem 0;
+      }
+    }
+  }
+}

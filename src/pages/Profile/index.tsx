@@ -1,8 +1,8 @@
 import ProfileInfo from './components/ProfileInfo';
-import ProfilePostContainer from './components/ProfilePostContainer';
 import './profile.scss';
 import { useAuth } from '../../contex/AuthContext';
 import { useParams } from 'react-router-dom';
+import Info from './components/Info';
 
 function Profile() {
   const { id } = useParams();
@@ -16,7 +16,7 @@ function Profile() {
       </div>
       <ProfileInfo user={authUser} />
       <div className="postProfile">
-        <ProfilePostContainer />
+        <Info />
       </div>
     </div>
   );

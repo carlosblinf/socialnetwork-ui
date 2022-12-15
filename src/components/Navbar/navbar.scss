@@ -12,6 +12,7 @@
     // border-bottom: 0.5px solid lightgray;
     gap: 10px;
     background-color: themed('bgSecondary');
+    position: relative;
 
     .left {
       flex: 1;

@@ -1,4 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense} from 'react';
+import Spinner from '../../../../components/Spinner/Spinner';
+
 
 type TabsProps = {
   tabs: {
@@ -27,7 +29,10 @@ function Tabs({ tabs, index, goToTab }: TabsProps) {
           </button>
         ))}
       </div>
+      <Suspense fallback={<Spinner />}>
       <div className="tabpanel">{<Panel/>}</div>
+
+      </Suspense>
     </div>
   );
 }

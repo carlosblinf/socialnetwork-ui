@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, lazy } from 'react';
 
 import Tabs from '../Tabs';
-import TabInformation from '../TabInformation';
-import TabFriends from '../TabFriends';
-import TabPhotos from '../TabPhotos';
-import ProfilePostContainer from '../ProfilePostContainer';
+const TabPhotos = lazy(() => import('../TabPhotos'));
+const ProfilePostContainer = lazy(() => import('../ProfilePostContainer'));
+const TabFriends = lazy(() => import('../TabFriends'));
+const TabInformation = lazy(() => import('../TabInformation'));
+
 import './Info.scss';
 
 const tabs = [

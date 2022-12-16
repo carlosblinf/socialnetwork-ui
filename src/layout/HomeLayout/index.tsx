@@ -1,7 +1,9 @@
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import Leftbar from '../../components/Leftbar';
 import Navbar from '../../components/Navbar';
 import Rightbar from '../../components/Rightbar';
+import Spinner from '../../components/Spinner/Spinner';
 import './layout.scss';
 
 function HomeLayout() {
@@ -11,7 +13,9 @@ function HomeLayout() {
       <div className="main">
         <Leftbar />
         <div className="content">
-          <Outlet />
+          <Suspense fallback={<Spinner />}>
+            <Outlet />
+          </Suspense>
         </div>
         <Rightbar />
       </div>

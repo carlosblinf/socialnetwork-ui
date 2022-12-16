@@ -58,36 +58,6 @@
       gap: 25px;
       font-size: 1.5rem;
 
-      .search {
-        display: flex;
-        position: relative;
-        align-items: center;
-        border-radius: 10px;
-        padding: 5px 20px;
-        gap: 5px;
-        background-color: themed('bgPrimary');
-        color: themed('textColorSecondary');
-
-        svg {
-          font-size: 1rem;
-        }
-
-        input {
-          width: 300px;
-          height: 35px;
-          border: none;
-          outline: none;
-          font-size: 1rem;
-          background-color: themed('bgPrimary');
-        }
-        ::placeholder {
-          color: themed('textColorSecondary');
-        }
-      }
-      &:focus-visible,
-      :focus-within {
-        border: 1px solid themed('textColorSecondary');
-      }
       .action {
         position: relative;
         cursor: pointer;

@@ -77,3 +77,19 @@
     object-fit: cover;
   }
 }
+
+@mixin page {
+  position: sticky;
+  top: 110px;
+  max-width: 800px;
+  max-height: calc(100vh - 90px);
+  padding: 20px;
+  margin: 0 auto;
+  overflow: auto;
+  // firefox
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

@@ -1,0 +1,36 @@
+@import '../../styles/mixin.scss';
+
+.containerFriends {
+  @include themify($themes) {
+    display: flex;
+    // align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    gap: 1rem;
+    background-color: themed('bgSecondary');
+    color: themed('textColorPrimary');
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      @include tablet {
+        .searchContent {
+          order: 1;
+          width: 100%;
+        }
+      }
+
+      button {
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        background-color: themed('bgPrimary');
+        color: themed('textColorPrimary');
+        cursor: pointer;
+      }
+    }
+  }
+}

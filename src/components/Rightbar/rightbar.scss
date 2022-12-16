@@ -34,7 +34,7 @@
           text-transform: uppercase;
           color: themed('textColorSecondary');
 
-          span:nth-child(2) {
+          span.request {
             width: 16px;
             height: 16px;
             margin-right: 5px;
@@ -42,8 +42,9 @@
             padding: 1px;
             font-size: 0.7rem;
             text-align: center;
-            background-color: #1877f2;
+            background-color: red;
             color: white;
+            cursor: pointer;
           }
           span.onlines {
             width: 30px;

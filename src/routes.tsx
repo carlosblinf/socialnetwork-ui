@@ -9,10 +9,10 @@ import PrivateRoutes, { LoggedRoute } from './PrivateRoutes';
 
 const Home = lazy(() => import('./pages/Home'));
 const Profile = lazy(() => import('./pages/Profile'));
-const FriendsPage = lazy(() => import('./pages/FriendsPage'));
-const PhotosPage = lazy(() => import('./pages/PhotosPage'));
-const VideosPage = lazy(() => import('./pages/VideosPage'));
-const SettingsPage = lazy(() => import('./pages/SettingsPage'));
+const Friends = lazy(() => import('./pages/Friends'));
+const Photos = lazy(() => import('./pages/Photos'));
+const Videos = lazy(() => import('./pages/Videos'));
+const Settings = lazy(() => import('./pages/Settings'));
 
 const routes = createBrowserRouter([
   {
@@ -43,15 +43,19 @@ const routes = createBrowserRouter([
       },
       {
         path: '/friends',
-        element: <FriendsPage />,
+        element: <Friends />,
+      },
+      {
+        path: '/friends/:tab',
+        element: <Friends />,
       },
       {
         path: '/photos',
-        element: <PhotosPage />,
+        element: <Photos />,
       },
       {
         path: '/videos',
-        element: <VideosPage />,
+        element: <Videos />,
       },
       {
         path: '/profile/:id',
@@ -59,7 +63,7 @@ const routes = createBrowserRouter([
       },
       {
         path: '/settings',
-        element: <SettingsPage />,
+        element: <Settings />,
       },
     ],
   },

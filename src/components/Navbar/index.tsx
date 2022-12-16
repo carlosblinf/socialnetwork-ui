@@ -12,6 +12,7 @@ import { useTheme } from '../../contex/ThemeModeContext';
 import { useAuth } from '../../contex/AuthContext';
 import NavDropdown from './components/NavDropdown';
 import { useState } from 'react';
+import SearchButton from '../SearchButton/SearchButton';
 
 function Navbar() {
   const { theme, toggle } = useTheme();
@@ -35,14 +36,8 @@ function Navbar() {
         </div>
       </div>
       <div className="right">
-        <div className="search">
-          <BsSearch />
-          <input
-            type="text"
-            name="search"
-            placeholder="Find friends, communities or pages here"
-          />
-        </div>
+        <SearchButton placeholder="Find friends, communities or pages here" />
+
         <div className="action" onClick={() => toggle()}>
           {theme === 'dark' ? <BsSun /> : <HiOutlineMoon />}
         </div>

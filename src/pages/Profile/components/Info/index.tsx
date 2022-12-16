@@ -1,48 +1,38 @@
 import React, { useEffect, useState, lazy } from 'react';
 
-import Tabs from '../Tabs';
-const TabPhotos = lazy(() => import('../TabPhotos'));
+import Tabs from '../../../../components/Tabs';
+const PhotoList = lazy(() => import('../../../../components/PhotoList'));
 const ProfilePostContainer = lazy(() => import('../ProfilePostContainer'));
-const TabFriends = lazy(() => import('../TabFriends'));
 const TabInformation = lazy(() => import('../TabInformation'));
 
-import './Info.scss';
+import FriendList from '../../../../components/FriendList';
+import TabsContainer from '../../../../components/TabsContainer';
 
 const tabs = [
   {
     index: 0,
     label: 'Posts',
-    Component: ProfilePostContainer,
+    Component: <ProfilePostContainer />,
   },
   {
     index: 1,
     label: 'Information',
-    Component: TabInformation,
+    Component: <TabInformation />,
   },
   {
     index: 2,
     label: 'Friends',
-    Component: TabFriends,
+    Component: <FriendList />,
   },
   {
     index: 3,
     label: 'Photos',
-    Component: TabPhotos,
+    Component: <PhotoList />,
   },
 ];
 
 function Info() {
-  const [index, setIndex] = useState(0);
-
-  const goToTab = (slideIndex: number) => {
-    setIndex(slideIndex);
-  };
-
-  return (
-    <div className="tabContainer">
-      <Tabs index={index} goToTab={goToTab} tabs={tabs} />
-    </div>
-  );
+  return <TabsContainer tabs={tabs} />;
 }
 
 export default Info;

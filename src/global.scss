@@ -80,3 +80,8 @@ a {
     transform: rotate(360deg);
   }
 }
+.hoverScale {
+  &:hover {
+    scale: 1.1;
+  }
+}

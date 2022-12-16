@@ -1,0 +1,51 @@
+@import '../../styles/mixin.scss';
+
+.friendCard {
+  @include themify($themes) {
+    .friendCardContainer {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      gap: 20px;
+      .item {
+        min-width: 200px;
+        flex: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        border-radius: 10px;
+
+        .friendContent {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          @include userImg;
+
+          .friendData {
+            display: flex;
+            flex-direction: column;
+
+            span {
+              font-size: 1rem;
+              &:last-child {
+                font-size: 0.8rem;
+                color: #999;
+              }
+            }
+          }
+        }
+        .actions {
+          button {
+            padding: 5px;
+            border: none;
+            background-color: themed('bgPrimary');
+            color: themed('textColorPrimary');
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

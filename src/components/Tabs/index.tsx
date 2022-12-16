@@ -1,13 +1,14 @@
-import React, { useEffect, Suspense} from 'react';
-import Spinner from '../../../../components/Spinner/Spinner';
+import React, { useEffect, Suspense } from 'react';
+import Spinner from '../Spinner';
 
+export interface Tab {
+  label: string;
+  index: number;
+  Component: JSX.Element;
+}
 
 type TabsProps = {
-  tabs: {
-    label: string;
-    index: number;
-    Component: React.FC<{}>;
-  }[];
+  tabs: Tab[];
   index: number;
   goToTab: (index: number) => void;
 };
@@ -30,8 +31,7 @@ function Tabs({ tabs, index, goToTab }: TabsProps) {
         ))}
       </div>
       <Suspense fallback={<Spinner />}>
-      <div className="tabpanel">{<Panel/>}</div>
-
+        <div className="tabpanel">{Panel}</div>
       </Suspense>
     </div>
   );

@@ -72,7 +72,7 @@ export const postList = [
   {
     id: 'ff9bfbe4-b0be-4b41-98a5-8ec29a3577f7',
     author: {
-      id: 'c7f1d345-a03e-44be-8a3c-be6f3d9b9a8a',
+      id: 'c7f1d345-a03e-44be-8a3c-be6f3d9b94a3',
       firstName: 'Miles',
       lastName: 'Cummerata',
       avatar: 'https://randomuser.me/api/portraits/men/50.jpg',

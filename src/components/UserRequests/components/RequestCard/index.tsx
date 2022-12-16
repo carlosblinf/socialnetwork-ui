@@ -1,14 +1,9 @@
 import React from 'react';
+import { OnlineUser } from '../../../../utils/types';
 
-type UserRequest = {
-  id: number;
-  firstName: string;
-  lastName: string;
-  avatar: string;
-};
 type RequestCardProps = {
   requestId: number;
-  user: UserRequest;
+  user: OnlineUser;
 };
 
 function RequestCard({ requestId, user }: RequestCardProps) {

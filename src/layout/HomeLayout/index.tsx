@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Leftbar from '../../components/Leftbar';
 import Navbar from '../../components/Navbar';
 import Rightbar from '../../components/Rightbar';
-import Spinner from '../../components/Spinner/Spinner';
+import Spinner from '../../components/Spinner';
 import './layout.scss';
 
 function HomeLayout() {

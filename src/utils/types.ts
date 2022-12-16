@@ -64,3 +64,13 @@ export enum SocialStorage {
   SOCIAL_AUTH = 'social_auth',
   SOCIAL_THEME = 'social_theme',
 }
+
+export interface OnlineUser {
+  id: string;
+  firstName: string;
+  lastName: string;
+  avatar: string;
+  username?: string;
+  countMessage?: number;
+  communFriends?: number;
+}

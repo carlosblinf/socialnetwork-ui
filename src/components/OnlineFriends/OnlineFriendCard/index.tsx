@@ -1,23 +1,17 @@
 import { AiOutlineMessage } from 'react-icons/ai';
+import { OnlineUser } from '../../../utils/types';
 
-type User = {
-  id: number;
-  firstName: string;
-  lastName: string;
-  avatar: string;
-  countMessage: number;
+type OnlineFriendCardProps = {
+  user: OnlineUser;
 };
-type FriendCardProps = {
-  user: User;
-};
-function FriendCard({ user }: FriendCardProps) {
+function OnlineFriendCard({ user }: OnlineFriendCardProps) {
   return (
     <>
       <div className="info">
         <img src={user.avatar} alt="friend" />
         {`${user.firstName} ${user.lastName}`}
       </div>
-      {user.countMessage > 0 ? (
+      {user.countMessage && user.countMessage > 0 ? (
         <span>{user.countMessage}</span>
       ) : (
         <AiOutlineMessage />
@@ -26,4 +20,4 @@ function FriendCard({ user }: FriendCardProps) {
   );
 }
 
-export default FriendCard;
+export default OnlineFriendCard;

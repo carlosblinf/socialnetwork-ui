@@ -1,3 +1,4 @@
+import { BiDotsHorizontal } from 'react-icons/bi';
 import { fullName, toRelativeTime } from '../../../../utils/infoUtils';
 import { Author } from '../../../../utils/types';
 import './PostHeader.scss';
@@ -19,7 +20,7 @@ function PostHeader({ author, date }: PostHeaderProps) {
           <p className="postDate">{toRelativeTime(date)}</p>
         </div>
       </div>
-      <div className="actions">...</div>
+      <div className="actions"><BiDotsHorizontal /></div>
     </div>
   );
 }

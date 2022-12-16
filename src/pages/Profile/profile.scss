@@ -2,20 +2,7 @@
 
 .profile {
   @include themify($themes) {
-    position: sticky;
-    top: 110px;
-    max-height: calc(100vh - 90px);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    overflow: auto;
-    // firefox
-    scrollbar-width: thin;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
+    @include page;
 
     .imagesProfile {
       position: relative;

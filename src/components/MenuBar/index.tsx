@@ -17,28 +17,28 @@ function MenuBar() {
       icon: <AiOutlineHome />,
     },
     {
-      title: 'Friends',
-      linkTo: '/',
-      icon: <HiOutlineUserGroup />,
-    },
-    {
-      title: 'Photos',
-      linkTo: '/',
-      icon: <HiOutlinePhoto />,
-    },
-    {
-      title: 'Videos',
-      linkTo: '/',
-      icon: <MdOutlineVideoSettings />,
-    },
-    {
       title: 'Profile',
       linkTo: '/profile/' + authUser?.id,
       icon: <BsPerson />,
     },
     {
+      title: 'Friends',
+      linkTo: '/friends',
+      icon: <HiOutlineUserGroup />,
+    },
+    {
+      title: 'Photos',
+      linkTo: '/photos',
+      icon: <HiOutlinePhoto />,
+    },
+    {
+      title: 'Videos',
+      linkTo: '/videos',
+      icon: <MdOutlineVideoSettings />,
+    },
+    {
       title: 'Settings',
-      linkTo: '/',
+      linkTo: '/settings',
       icon: <IoSettingsOutline />,
     },
   ];

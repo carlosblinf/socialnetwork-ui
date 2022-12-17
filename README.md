@@ -1,5 +1,6 @@
 # React + Typescript + SASS + Vite Social Network App
 
+<img src="https://github.com/carlosblinf/get-all/blob/main/public/capture.png" align="center" width="400px" /></a>
 You can visit [Demo](https://react-vite-realworld.netlify.app/)
 
 ## Getting started

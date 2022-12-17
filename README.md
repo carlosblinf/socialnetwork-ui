@@ -1,7 +1,7 @@
 # React + Typescript + SASS + Vite Social Network App
 
-<img src="https://github.com/carlosblinf/get-all/blob/main/public/capture.png" align="center" width="400px" /></a>
 You can visit [Demo](https://react-vite-realworld.netlify.app/)
+<img src="https://github.com/carlosblinf/get-all/blob/main/public/capture.png" align="center" width="400px" /></a>
 
 ## Getting started
 
@@ -10,7 +10,6 @@ To get the app running locally:
 - Clone this repo
 - `npm install` to install all req'd dependencies
 - `npm run dev` to start the local server (this project Vite)
-
 
 ## Functionality overview
 
@@ -22,24 +21,24 @@ The example application is a social network inspired in some dribble designs and
 **General functionality:**
 
 - Authenticate users via LocalStorage (login/signup pages + logout button on settings page)
-- CRUD Posts (you can add images to created post) #### Another functions *Comming soom*
-- CRUD Comments *Comming soom*
+- CRUD Posts (you can add images to created post) #### Another functions _Comming soom_
+- CRUD Comments _Comming soom_
 - Like and dislike posts
-- Follow other users *Comming soom*
+- Follow other users _Comming soom_
 
 **The general page breakdown looks like this:**
 
 - Home page (URL: /#/ )
-    - List of tags
-    - List of articles pulled from either Feed, Global, or by Tag
-    - Pagination for list of articles
+  - List of tags
+  - List of articles pulled from either Feed, Global, or by Tag
+  - Pagination for list of articles
 - Sign in/Sign up pages (URL: /#/login, /#/register )
-    - (store the user in localStorage)
+  - (store the user in localStorage)
 - Profile page (URL: /#/profile/:id )
-    - Show basic user info
-    - List of posts from the current user
-    - Friends list
-    - Photo list
+  - Show basic user info
+  - List of posts from the current user
+  - Friends list
+  - Photo list
 - Friends page (URL: /#/friends )
 - Photos page (URL: /#/photos )
 - Videos page (URL: /#/videos )

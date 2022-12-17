@@ -14,7 +14,7 @@ To get the app running locally:
 
 ## Functionality overview
 
-The example application is a social network inspired in some dribble designs and the most important apps.
+The example application is a full responsive social network inspired in some dribble designs and the most important apps.
 
 <a href="https://dribbble.com/shots/18932669-Social-media-platfrom-Forumboard"><img src="https://cdn.dribbble.com/users/5324991/screenshots/18932669/media/01d21560329971cc5decc4afaaeae152.png" align="right" width="250px" /></a>
 <a href="https://dribbble.com/shots/15327109-Social-Network-Web-Concept"><img src="https://cdn.dribbble.com/users/78806/screenshots/15327109/media/eec25a4fdba8566cecad66f70cab1a88.png" align="center" width="250px" /></a>
@@ -30,9 +30,9 @@ The example application is a social network inspired in some dribble designs and
 **The general page breakdown looks like this:**
 
 - Home page (URL: /#/ )
-  - List of tags
-  - List of articles pulled from either Feed, Global, or by Tag
-  - Pagination for list of articles
+  - Histories
+  - List of Posts
+  - Share post
 - Sign in/Sign up pages (URL: /#/login, /#/register )
   - (store the user in localStorage)
 - Profile page (URL: /#/profile/:id )

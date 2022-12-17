@@ -1,4 +1,4 @@
-# React + Typescript + SASS + Vite Social Network App
+# Social Network UI App, React + Typescript + SASS + Vite
 
 You can visit [Demo](https://mysocialnetwork-xi.vercel.app/)
 <br />

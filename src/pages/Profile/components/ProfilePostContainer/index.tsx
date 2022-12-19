@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import PostList from '../../../../components/PostList';
-import { Post } from '../../../../utils/types';
-import { postList } from '../../../Home/components/HomePostContainer';
 import { useAuth } from '../../../../contex/AuthContext';
+import { useAppSelector } from '../../../../store/store';
+import { selectPosts } from '../../../../store/features/post/post.slice';
 
 function ProfilePostContainer() {
   const { authUser } = useAuth();
-  const [posts, setPosts] = useState<Post[]>([]);
+  const posts = useAppSelector(selectPosts);
 
-  const profilePostList = postList.filter((post) => post.id == authUser?.id);
+  const profilePostList = posts?.filter(
+    (post) => post.author.id == authUser.id
+  );
 
-  useEffect(() => {
-    setPosts(postList);
-  }, [posts]);
-
-  return <PostList posts={posts} />;
+  return <PostList posts={profilePostList} />;
 }
 
 export default ProfilePostContainer;

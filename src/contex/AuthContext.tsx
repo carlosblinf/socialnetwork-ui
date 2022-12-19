@@ -10,7 +10,7 @@ import {
 import { ThemeProviderProps } from './ThemeModeContext';
 
 type AuthContextType = {
-  authUser: User | null;
+  authUser: User;
   isLogin: boolean;
   registerUser: (user: NewUserFrom) => void;
   login: (credentials: UserCredential) => void;
@@ -25,8 +25,8 @@ const localStorageUser = localStorage.getItem(SocialStorage.SOCIAL_USER);
 const localStorageisLoging = localStorage.getItem(SocialStorage.SOCIAL_AUTH);
 
 export function AuthContextProvider({ children }: ThemeProviderProps) {
-  const [authUser, setAuthUser] = useState<User | null>(
-    (localStorageUser && JSON.parse(localStorageUser)) || null
+  const [authUser, setAuthUser] = useState<User>(
+    (localStorageUser && JSON.parse(localStorageUser)) || {}
   );
   const [isLogin, setIsLogin] = useState<boolean>(
     (localStorageisLoging && JSON.parse(localStorageisLoging)) || false

@@ -1,6 +1,6 @@
 import React from 'react';
-import { requests } from '../../../UserRequests';
 import RequestCard from '../../../UserRequests/components/RequestCard';
+import { requests } from '../../../../store/data';
 import './FriendRequest.scss';
 
 function FriendRequest() {

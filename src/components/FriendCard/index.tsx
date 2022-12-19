@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './FriendCard.scss';
 import { BiDotsVertical } from 'react-icons/bi';
-import { onlines } from '../OnlineFriends';
 import { OnlineUser } from '../../utils/types';
+import { onlines } from '../../store/data';
 
 type FriendProps = {
   filter: 'allfriends' | 'recently' | 'followers' | 'friendrequest';

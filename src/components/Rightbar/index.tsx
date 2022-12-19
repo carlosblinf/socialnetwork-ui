@@ -1,5 +1,6 @@
-import OnlineFriends, { onlines } from '../OnlineFriends';
-import UserRequest, { requests } from '../UserRequests';
+import { onlines, requests } from '../../store/data';
+import OnlineFriends from '../OnlineFriends';
+import UserRequest from '../UserRequests';
 import './Rightbar.scss';
 import { Link, useNavigate } from 'react-router-dom';
 

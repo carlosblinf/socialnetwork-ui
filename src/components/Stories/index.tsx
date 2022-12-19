@@ -1,63 +1,7 @@
 import { useAuth } from '../../contex/AuthContext';
+import { stories } from '../../store/data';
 import './Stories.scss';
 
-const stories = [
-  {
-    id: 1,
-    user: {
-      id: 2,
-      firstName: 'Tyrell',
-      lastName: 'Barrows',
-      avatar: 'https://randomuser.me/api/portraits/men/78.jpg',
-    },
-    image:
-      'https://images.pexels.com/photos/6033681/pexels-photo-6033681.jpeg?auto=compress&cs=tinysrgb&w=640&h=960&dpr=1',
-  },
-  {
-    id: 2,
-    user: {
-      id: 3,
-      firstName: 'Alison',
-      lastName: 'Reichert',
-      avatar: 'https://randomuser.me/api/portraits/women/79.jpg',
-    },
-    image:
-      'https://images.pexels.com/photos/6087668/pexels-photo-6087668.jpeg?auto=compress&cs=tinysrgb&w=640&h=960&dpr=1',
-  },
-  {
-    id: 3,
-    user: {
-      id: 4,
-      firstName: 'Miles',
-      lastName: 'Cummerata',
-      avatar: 'https://randomuser.me/api/portraits/men/50.jpg',
-    },
-    image:
-      'https://images.pexels.com/photos/6061857/pexels-photo-6061857.jpeg?auto=compress&cs=tinysrgb&w=640&h=960&dpr=1',
-  },
-  {
-    id: 4,
-    user: {
-      id: 5,
-      firstName: 'Ana',
-      lastName: 'Valerion',
-      avatar: 'https://randomuser.me/api/portraits/women/59.jpg',
-    },
-    image:
-      'https://images.pexels.com/photos/6061698/pexels-photo-6061698.jpeg?auto=compress&cs=tinysrgb&w=640&h=960&dpr=1',
-  },
-  {
-    id: 5,
-    user: {
-      id: 6,
-      firstName: 'Oleta Fernandez',
-      lastName: 'Abbott asdasd',
-      avatar: 'https://randomuser.me/api/portraits/women/18.jpg',
-    },
-    image:
-      'https://images.pexels.com/photos/6062009/pexels-photo-6062009.jpeg?auto=compress&cs=tinysrgb&w=640&h=960&dpr=1',
-  },
-];
 function Stories() {
   const { authUser } = useAuth();
 

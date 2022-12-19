@@ -1,4 +1,4 @@
-import React, { useEffect, useState, lazy } from 'react';
+import React, { lazy } from 'react';
 
 import Tabs from '../../../../components/Tabs';
 const PhotoList = lazy(() => import('../../../../components/PhotoList'));

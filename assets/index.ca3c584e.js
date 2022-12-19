@@ -1,0 +1,1 @@
+import t from"./index.25fd329c.js";import{j as o}from"./index.74ad95db.js";import"./index.d3e2bb6e.js";import"./index.esm.c6e5169c.js";function p(){return o("div",{className:"photos",children:o(t,{})})}export{p as default};

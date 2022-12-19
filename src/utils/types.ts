@@ -3,7 +3,7 @@ export interface Post {
   author: Author;
   date: string;
   text: string;
-  images?: Image[];
+  images: Image[];
 }
 
 export interface Author {
@@ -14,7 +14,7 @@ export interface Author {
 }
 
 export interface Image {
-  id: number;
+  id: string;
   url: string;
 }
 

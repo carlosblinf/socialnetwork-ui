@@ -1,21 +1,21 @@
 import { useEffect, useRef, useState } from 'react';
 import { useAuth } from '../../contex/AuthContext';
 import { useGlobal } from '../../contex/GlobalContext';
-import './Share.scss';
 import { useAppDispatch } from '../../store/store';
 import { addPost } from '../../store/features/post/post.slice';
 import { v4 as uuidv4 } from 'uuid';
-import { Image, Post } from '../../utils/types';
+import { Post } from '../../utils/types';
+import { toast } from '../ToastManager';
+import './Share.scss';
 
 function Share() {
   const { authUser } = useAuth();
   const [fileList, setFileList] = useState<File[]>([]);
-  const [images, setImages] = useState<Image[]>([]);
   const { changeImages, openModal } = useGlobal();
   const dispatch = useAppDispatch();
   const inputRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {}, [fileList, images]);
+  useEffect(() => {}, [fileList]);
 
   const handleOnFileChange = ({
     currentTarget: { files },
@@ -28,14 +28,13 @@ function Share() {
   const getImageList = () => {
     return fileList.map((file, index) => {
       return {
-        id: index,
+        id: uuidv4(),
         url: URL.createObjectURL(file),
       };
     });
   };
   const showImages = (): void => {
     if (fileList && fileList.length) {
-      // setImages(imagesList);
       changeImages(getImageList());
       openModal();
     }
@@ -45,23 +44,25 @@ function Share() {
     setFileList([]);
     changeImages([]);
   };
+
   const onClik = () => {
-    const newPost: Post = {
-      id: uuidv4(),
-      author: authUser,
-      date: new Date().toISOString(),
-      text: inputRef.current?.value || '',
-      images: [
-        {
-          id: 1,
-          url: 'https://images.pexels.com/photos/6061857/pexels-photo-6061857.jpeg?auto=compress&cs=tinysrgb&w=640&h=960&dpr=1',
-        },
-        ...getImageList(),
-      ],
-    };
-    console.log(uuidv4());
-    // console.log(newPost);
-    dispatch(addPost(newPost));
+    const text = inputRef.current?.value;
+    if (text && text?.length > 0) {
+      const newPost: Post = {
+        id: uuidv4(),
+        author: authUser,
+        date: new Date().toISOString(),
+        text,
+        images: [...getImageList()],
+      };
+      dispatch(addPost(newPost));
+      deleteImages();
+      inputRef.current.value = '';
+    } else
+      toast.show({
+        title: 'Error',
+        content: 'Empty post text, share something',
+      });
   };
 
   return (

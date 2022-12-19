@@ -60,6 +60,18 @@ a {
   display: flex;
   flex-direction: column;
   width: 250px;
+
+  .toast {
+    .success {
+      color: rgb(73, 235, 73);
+    }
+    .error {
+      color: rgb(251, 62, 62);
+    }
+    .warning {
+      color: rgb(224, 224, 70);
+    }
+  }
 }
 
 .loader {

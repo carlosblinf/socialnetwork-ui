@@ -1,5 +1,5 @@
 import React from 'react';
-import Toast, { ToastProps } from '../Toast';
+import Toast, { ToastProps, ToastType } from '../Toast';
 import ReactDOM from 'react-dom/client';
 
 interface ToastOptions {
@@ -7,6 +7,7 @@ interface ToastOptions {
   title: string;
   content: string;
   duration?: number;
+  type?: ToastType;
 }
 
 export class ToastManager {

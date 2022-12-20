@@ -13,11 +13,11 @@ function NavDropdown({ openMenu }: NavDropDownProps) {
 
   return (
     <div className="dropdownMenu">
-      <Link to="/">Comunity</Link>
-      <Link to="/">Friends</Link>
-      <Link to="/">Videos</Link>
+      <Link to="/">Home</Link>
       <Link to={'/profile/' + authUser?.id}>Profile</Link>
-      <Link to="/">Settings</Link>
+      <Link to="/friends">Friends</Link>
+      <Link to="/videos">Videos</Link>
+      <Link to="/settings">Settings</Link>
       <button onClick={() => logout()}>Logout</button>
     </div>
   );

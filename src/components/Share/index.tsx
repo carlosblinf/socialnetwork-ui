@@ -101,16 +101,16 @@ function Share() {
             />
             <label htmlFor="file">
               <div className="item">
-                <img src="image-svgrepo-com.svg" alt="addImage" />
+                <img src="/image-svgrepo-com.svg" alt="addImage" />
                 <span>Add Image</span>
               </div>
             </label>
             <div className="item">
-              <img src="map-svgrepo-com.svg" alt="place" />
+              <img src="/map-svgrepo-com.svg" alt="place" />
               <span>Add Place</span>
             </div>
             <div className="item">
-              <img src="add-user-svgrepo-com.svg" alt="tag friends" />
+              <img src="/add-user-svgrepo-com.svg" alt="tag friends" />
               <span>Tag Friends</span>
             </div>
           </div>

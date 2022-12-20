@@ -1,5 +1,17 @@
+@import '../../styles/mixin.scss';
+
 .posts {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include themify($themes) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .noPost {
+      margin: 1rem 0;
+      padding: 1rem;
+      text-align: center;
+      background-color: themed('bgSecondary');
+      color: themed('bgHoverBlack');
+    }
+  }
 }

@@ -1,1 +1,0 @@
-import{d as a,z as d,j as s,R as t}from"./index.74ad95db.js";function i(){var r;return a("div",{className:"friendRequest",children:[(r=d)==null?void 0:r.map(e=>s("div",{className:"requestCard card",children:s(t,{requestId:e.id,user:e.user})},e.id)),!d&&s("span",{children:"No request"})]})}export{i as default};

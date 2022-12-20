@@ -1,1 +1,0 @@
-import{j as a,E as e}from"./index.52b92868.js";function r(){return a("div",{className:"images",children:e.map((s,i)=>a("div",{className:"imageCard",children:a("img",{src:s.url,alt:"albun",className:"image"})},s.id))})}function t(){return a(r,{})}export{t as default};

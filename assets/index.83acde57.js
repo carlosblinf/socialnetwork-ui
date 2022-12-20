@@ -1,1 +1,0 @@
-import{b as d,z as a,j as s,R as t}from"./index.52b92868.js";function i(){var r;return d("div",{className:"friendRequest",children:[(r=a)==null?void 0:r.map(e=>s("div",{className:"requestCard card",children:s(t,{requestId:e.id,user:e.user})},e.id)),!a&&s("span",{children:"No request"})]})}export{i as default};

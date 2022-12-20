@@ -1,0 +1,1 @@
+import{F as i}from"./index.742ac19f.js";import{j as r}from"./index.eec40bbb.js";import"./index.7a580374.js";import"./index.esm.5bb7819e.js";function o(){return r("div",{className:"friends",children:r(i,{})})}export{o as default};

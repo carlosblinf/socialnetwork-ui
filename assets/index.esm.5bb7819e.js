@@ -1,0 +1,1 @@
+import{G as a}from"./index.eec40bbb.js";function r(t){return a({tag:"svg",attr:{viewBox:"0 0 24 24"},child:[{tag:"path",attr:{d:"M10 10h4v4h-4zm6 0h4v4h-4zM4 10h4v4H4z"}}]})(t)}function o(t){return a({tag:"svg",attr:{viewBox:"0 0 24 24"},child:[{tag:"path",attr:{d:"M10 10h4v4h-4zm0-6h4v4h-4zm0 12h4v4h-4z"}}]})(t)}export{r as B,o as a};

@@ -1,1 +1,0 @@
-import{S as a,P as i}from"./index.c8c6d11e.js";import{a as n,u,s as c,b as f,F as l,j as t}from"./index.52b92868.js";import"./index.esm.f54470ad.js";function h(){const{authUser:o}=n(),s=u(c),r=s==null?void 0:s.filter(e=>e.author.id==o.id);return f(l,{children:[t(a,{}),t(i,{posts:r}),";"]})}export{h as default};
